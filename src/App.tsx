@@ -1,7 +1,13 @@
 import React from "react";
 import "./App.css";
 import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
+import { initReactI18next } from "react-i18next";
+import Header from "./components/header";
+import { About } from "./components/about";
+import { Contact } from "./components/contact";
+import { Footer } from "./components/footer";
+
+import data from "./data.json";
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -9,12 +15,12 @@ i18n
     resources: {
       en: {
         translation: {
-          "Welcome to React": "Welcome to React and react-i18next",
+          welcome: "Welcome to React and react-i18next",
         },
       },
       ro: {
         translation: {
-          "Welcome to React": "Bun venit la react",
+          welcome: "Bun venit!",
         },
       },
     },
@@ -27,13 +33,16 @@ i18n
   });
 
 function App() {
-  const { t } = useTranslation();
+  const [resume, setResume] = React.useState(data);
+  React.useEffect(() => {
+    setResume(data);
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <p>{t("Welcome to React")}</p>
-        {"Cristina & Alex"}
-      </header>
+      <Header />
+      <About data={resume.main} />
+      <Contact data={resume.main} />
+      <Footer data={resume.main} />
     </div>
   );
 }
