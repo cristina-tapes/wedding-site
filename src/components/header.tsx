@@ -2,6 +2,14 @@ import * as React from "react";
 
 const Header: React.FunctionComponent<{}> = () => {
   const name = "Cristina &Alex";
+  const date = "4 September 2021";
+  const place = "Cluj-Napoca";
+  const navHome = "Home";
+  const navInvitation = "Invitation";
+  const navAboutUs = "About Us";
+  const navEvents = "Events";
+  const navRSVP = "RSVP";
+
   return (
     <header id="home">
       <nav id="nav-wrap">
@@ -14,23 +22,43 @@ const Header: React.FunctionComponent<{}> = () => {
         <h3>{name}</h3>
         <ul id="nav" className="nav">
           <li>
-            <a href="#home">Home</a>
+            <a href="#home">{navHome}</a>
           </li>
 
           <li>
-            <a href="#about">About</a>
+            <a href="#invitation">{navInvitation}</a>
           </li>
 
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#about">{navAboutUs}</a>
+          </li>
+
+          <li>
+            <a href="#events">{navEvents}</a>
+          </li>
+
+          <li>
+            <a href="#rsvp">{navRSVP}</a>
+          </li>
+
+          <li className="languages">
+            <p className="selected">EN</p>
+            <br />
+            <hr />
+            <p>RO</p>
+            <br />
+            <hr />
+            <p>RU</p>
           </li>
         </ul>
       </nav>
 
       <div className="banner">
         <h1 className="banner-text">{name}</h1>
-        {/*  <h3>4 Septembrie 2021 - Cluj-Napoca</h3>
-       <p>
+        <h3>
+          {date} - {place}
+        </h3>
+        {/*      <p>
           <a href="#about">
             <i className="icon-down-circle"></i>
           </a>

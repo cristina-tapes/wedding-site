@@ -4,7 +4,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import Header from "./components/header";
 import { About } from "./components/about";
-import { Contact } from "./components/contact";
+import { Contact } from "./components/rsvp";
 import { Footer } from "./components/footer";
 
 import data from "./data.json";

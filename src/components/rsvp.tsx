@@ -6,7 +6,7 @@ export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
   const handleChange = () => { };
 
   return (
-    <section id="contact">
+    <section id="rsvp">
       <div className="row section-head">
         <div className="two columns header-col">
           <h1>

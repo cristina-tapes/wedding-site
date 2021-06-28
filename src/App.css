@@ -236,6 +236,33 @@ ul#nav li {
   display: inline-block;
 }
 
+ul#nav li.languages {
+  display: inline-flex;
+  line-height: 16px;
+  text-decoration: none;
+  text-align: left;
+  color: #fff;
+
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+ul#nav li.languages > hr {
+  height: 26px;
+}
+
+ul#nav li.languages > p {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+ul#nav li.languages > p.selected {
+  color: darkgreen;
+}
+
 /* Links */
 ul#nav li a {
   /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
@@ -416,36 +443,36 @@ ul#nav li.current a:hover {
 /* h. Contact Section
 /* ------------------------------------------------------------------ */
 
-#contact {
+#rsvp {
   background: #191919;
   padding-top: 96px;
   padding-bottom: 102px;
   color: #636363;
 }
-#contact .section-head {
+#rsvp .section-head {
   margin-bottom: 42px;
 }
 
-#contact a,
-#contact a:visited {
+#rsvp a,
+#rsvp a:visited {
   color: darkgreen;
 }
-#contact a:hover,
-#contact a:focus {
+#rsvp a:hover,
+#rsvp a:focus {
   color: #fff;
 }
 
-#contact h1 {
+#rsvp h1 {
   font: 18px/24px "opensans-bold", sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #ebeeee;
   margin-bottom: 6px;
 }
-#contact h1 span {
+#rsvp h1 span {
   display: none;
 }
-#contact h1:before {
+#rsvp h1:before {
   font-family: "FontAwesome";
   content: "\f0e0";
   padding-right: 10px;
@@ -456,24 +483,24 @@ ul#nav li.current a:hover {
   color: #ebeeee;
 }
 
-#contact h4 {
+#rsvp h4 {
   font: 16px/24px "opensans-bold", sans-serif;
   color: #ebeeee;
   margin-bottom: 6px;
 }
-#contact p.lead {
+#rsvp p.lead {
   font: 18px/36px "opensans-regular", sans-serif;
   padding-right: 3%;
 }
-#contact .header-col {
+#rsvp .header-col {
   padding-top: 6px;
 }
 
-/* contact form */
-#contact form {
+/* rsvp form */
+#rsvp form {
   margin-bottom: 30px;
 }
-#contact label {
+#rsvp label {
   font: 15px/24px "opensans-bold", sans-serif;
   margin: 12px 0;
   color: #ebeeee;
@@ -481,9 +508,9 @@ ul#nav li.current a:hover {
   float: left;
   width: 26%;
 }
-#contact input,
-#contact textarea,
-#contact select {
+#rsvp input,
+#rsvp textarea,
+#rsvp select {
   padding: 10px 20px;
   color: #eee;
   background: #373233;
@@ -494,13 +521,13 @@ ul#nav li.current a:hover {
   line-height: 24px;
   width: 65%;
 }
-#contact input:focus,
-#contact textarea:focus,
-#contact select:focus {
+#rsvp input:focus,
+#rsvp textarea:focus,
+#rsvp select:focus {
   color: #fff;
   background-color: darkgreen;
 }
-#contact button.submit {
+#rsvp button.submit {
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #fff;
@@ -512,11 +539,11 @@ ul#nav li.current a:hover {
   border-radius: 0px;
   margin-left: 26%;
 }
-#contact button.submit:hover {
+#rsvp button.submit:hover {
   color: #0d0d0d;
   background: #fff;
 }
-#contact span.required {
+#rsvp span.required {
   color: darkgreen;
   font-size: 13px;
 }
@@ -728,7 +755,7 @@ footer .social-links li:first-child {
     height: 114px;
     margin-left: 12px;
   }
-  #about .contact-details {
+  #about .rsvp-details {
     width: 50%;
   }
   #about .download {
@@ -737,14 +764,14 @@ footer .social-links li:first-child {
 
   /* Contact Section
  ------------------------------------------------------------------- */
-  #contact .section-head {
+  #rsvp .section-head {
     margin-bottom: 30px;
   }
-  #contact .header-col h1:before {
+  #rsvp .header-col h1:before {
     font-size: 66px;
     line-height: 66px;
   }
-  #contact .section-head p.lead {
+  #rsvp .section-head p.lead {
     font: 17px/33px opensans-light, sans-serif;
   }
 }
@@ -899,44 +926,44 @@ footer .social-links li:first-child {
     padding-right: 30px;
   }
 
-  /* contact Section
+  /* rsvp Section
  ----------------------------------------------------------------------- */
-  #contact {
+  #rsvp {
     padding-bottom: 66px;
   }
-  #contact .section-head {
+  #rsvp .section-head {
     margin-bottom: 12px;
   }
-  #contact .section-head h1 {
+  #rsvp .section-head h1 {
     font: 16px/24px "opensans-bold", sans-serif;
     text-align: center;
     margin-bottom: 30px;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
   }
-  #contact h1 span {
+  #rsvp h1 span {
     display: block;
   }
-  #contact .header-col {
+  #rsvp .header-col {
     padding-top: 0;
   }
-  #contact .header-col h1:before {
+  #rsvp .header-col h1:before {
     content: none;
   }
-  #contact .section-head p.lead {
+  #rsvp .section-head p.lead {
     text-align: center;
   }
 
   /* form */
-  #contact label {
+  #rsvp label {
     float: none;
     width: 100%;
   }
-  #contact input,
-  #contact textarea,
-  #contact select {
+  #rsvp input,
+  #rsvp textarea,
+  #rsvp select {
     margin-bottom: 6px;
   }
-  #contact button.submit {
+  #rsvp button.submit {
     margin: 30px 0 24px 0;
   }
   #message-warning,
