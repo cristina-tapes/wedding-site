@@ -1,0 +1,29 @@
+{
+  "en": {
+    "date": "4 September 2021",
+    "location": "Cluj-Napoca",
+    "navHome": "Home",
+    "navInvitation": "Invitation",
+    "navAboutUs": "Our Story",
+    "navEvents": "Events",
+    "navRsvp": "RSVP"
+  },
+  "ro": {
+    "date": "4 Septembrie 2021",
+    "location": "Cluj-Napoca",
+    "navHome": "Acasă",
+    "navInvitation": "Invitaţie",
+    "navAboutUs": "Povestea noastră",
+    "navEvents": "Evenimente",
+    "navRsvp": "Confirmare"
+  },
+  "ru": {
+    "date": "4 Сентября 2021",
+    "location": "Клуж-Напока",
+    "navHome": "Главная",
+    "navInvitation": "Приглашение",
+    "navAboutUs": "Наша история",
+    "navEvents": "Мероприятия",
+    "navRsvp": "Подтверждение"
+  }
+}

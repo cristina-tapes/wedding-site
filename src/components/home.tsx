@@ -1,45 +1,12 @@
 import * as React from "react";
 import { Languages } from "../App";
 
-const text = {
-  en: {
-    date: "4 September 2021",
-    location: "Cluj-Napoca",
-    navHome: "Home",
-    navInvitation: "Invitation",
-    navAboutUs: "About Us",
-    navEvents: "Events",
-    navRsvp: "RSVP"
-  },
-  ro: {
-    date: "4 Septembrie 2021",
-    location: "Cluj-Napoca",
-    navHome: "Acasă",
-    navInvitation: "Invitaţie",
-    navAboutUs: "Despre noi",
-    navEvents: "Evenimente",
-    navRsvp: "Confirmare"
-  },
-  ru: {
-    date: "4 Сентября 2021",
-    location: "Клуж-Напока",
-    navHome: "Acasă",
-    navInvitation: "Invitaţie",
-    navAboutUs: "Despre noi",
-    navEvents: "Evenimente",
-    navRsvp: "Confirmare"
-  },
-};
+import t from "../localization.json";
+
 
 const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) => {
   const name = "Cristina &Alex";
-  const date = text[language]["date"];
-  const place = text[language]["location"];
-  const navHome = text[language]["navHome"];
-  const navInvitation = text[language]["navInvitation"];
-  const navAboutUs = text[language]["navAboutUs"];
-  const navEvents = text[language]["navEvents"];
-  const navRSVP = text[language]["navRsvp"];
+  const { date, location, navHome, navInvitation, navAboutUs, navEvents, navRsvp} = t[language];
 
   return (
     <header id="home">
@@ -69,7 +36,7 @@ const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) =>
           </li>
 
           <li>
-            <a href="#rsvp">{navRSVP}</a>
+            <a href="#rsvp">{navRsvp}</a>
           </li>
           {/* <li className="languages">
             <p className="selected">EN</p>
@@ -89,7 +56,7 @@ const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) =>
         <h3>
           <span className="weddingDate">{date}</span>
           <br />
-          <span className="weddingTown">{place}</span>
+          <span className="weddingTown">{location}</span>
         </h3>
         {/*      <p>
           <a href="#about">
