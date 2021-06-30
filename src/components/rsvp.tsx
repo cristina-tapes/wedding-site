@@ -3,7 +3,8 @@ import * as React from "react";
 export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
   const name = props.data.name;
 
-  const handleChange = () => { };
+  const [formdata, setFormData] = React.useState({name: undefined, emailId:undefined, message:undefined})
+  const onChange = (event: any) => setFormData({ ...formdata, [event.target.name]: event.target.value });
 
   return (
     <section id="rsvp">
@@ -29,11 +30,11 @@ export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue=""
+                  value={formdata.name || ''}
                   size={35}
                   id="contactName"
-                  name="contactName"
-                  onChange={handleChange}
+                  name="name"
+                  onChange={onChange}
                 />
               </div>
 
@@ -43,23 +44,11 @@ export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue=""
+                  value={formdata.emailId || ''} 
                   size={35}
-                  id="contactEmail"
-                  name="contactEmail"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="contactSubject">Subject</label>
-                <input
-                  type="text"
-                  defaultValue=""
-                  size={35}
-                  id="contactSubject"
-                  name="contactSubject"
-                  onChange={handleChange}
+                  id="email"
+                  name="email"
+                  onChange={onChange}
                 />
               </div>
 
@@ -70,11 +59,12 @@ export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
                 <textarea
                   cols={50}
                   rows={15}
-                  id="contactMessage"
-                  name="contactMessage"
+                  id="message"
+                  name="message"
+                  value={formdata.message || ''}
+                  onChange={onChange}
                 ></textarea>
               </div>
-
               <div>
                 <button className="submit">Submit</button>
                 <span id="image-loader">

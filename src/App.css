@@ -73,6 +73,20 @@ input {
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
 
+hr.bookends {
+  border: 0;
+  margin: 1.35em 0 1.35em auto;
+  max-width: 50%;
+  box-sizing: border-box;
+  height: 20px;
+  background-image: radial-gradient(
+    closest-side,
+    #90bca2,
+    hsla(0, 0%, 50%, 0) 100%
+  );
+  position: relative;
+}
+
 header {
   position: relative;
   height: 800px;
@@ -104,37 +118,23 @@ header .banner {
   vertical-align: middle;
   margin: 0 auto;
   width: 85%;
-  padding-bottom: 30px;
   text-align: right;
+}
+
+header .banner h3 {
+  font-family: serif;
+  font-weight: bolder;
+  font-size: 36px;
+  color: #2d593f;
+  text-shadow: 0 0 darkgreen;
 }
 
 header .banner-text {
   width: 100%;
   font-family: "alex-regular";
   font-size: 100px;
-  color: darkgreen;
-}
-header .banner-text h1 {
-  font: 90px/1.1em "opensans-bold", sans-serif;
-  color: #fff;
-  letter-spacing: -2px;
-  margin: 0 auto 18px auto;
-}
-header .banner-text h3 {
-  font: 18px/1.9em "opensans-regular", serif;
-  color: #ddd;
-  margin: 0 auto;
-  width: 70%;
-}
-header .banner-text h3 span,
-header .banner-text h3 a {
-  color: #fff;
-}
-header .banner-text hr {
-  width: 60%;
-  margin: 18px auto 24px auto;
-  border-color: #2f2d2e;
-  border-color: rgba(150, 150, 150, 0.1);
+  color: #0c381e;
+  margin-block-end: 0px;
 }
 
 /* header social links */
@@ -730,18 +730,19 @@ footer .social-links li:first-child {
   header .banner {
     padding-bottom: 12px;
   }
-  header .banner-text h1 {
-    font: 78px/1.1em "opensans-bold", sans-serif;
-    letter-spacing: -1px;
+
+  header .banner h3 {
+    font-size: 26px;
   }
-  header .banner-text h3 {
-    font: 17px/1.9em "opensans-regular", serif;
-    width: 80%;
+
+  header .banner-text {
+    font-size: 80px;
   }
-  header .banner-text hr {
-    width: 65%;
-    margin: 12px auto;
+
+  hr.bookends {
+    max-width: 70%;
   }
+
   /* nav-wrap */
   #nav-wrap {
     font: 11px "opensans-bold", sans-serif;
@@ -885,26 +886,17 @@ footer .social-links li:first-child {
     padding-bottom: 12px;
     padding-top: 6px;
   }
-  header .banner-text h1 {
-    font: 68px/1.1em "opensans-bold", sans-serif;
-  }
-  header .banner-text h3 {
-    font: 16px/1.9em "opensans-regular", serif;
-    width: 85%;
-  }
-  header .banner-text hr {
-    width: 80%;
-    margin: 18px auto;
+
+  header .banner h3 {
+    font-size: 24px;
   }
 
-  /* header social links */
-  header .social {
-    margin: 18px 0 24px 0;
-    font-size: 24px;
-    line-height: 36px;
+  header .banner-text {
+    font-size: 66px;
   }
-  header .social li {
-    margin: 0 10px;
+
+  hr.bookends {
+    max-width: 100%;
   }
 
   /* scrolldown link */
@@ -1032,20 +1024,21 @@ footer .social-links li:first-child {
   }
 
   header .banner {
-    margin-top: -400px;
+    margin-top: -300px;
     display: inline-block;
   }
+
+  header .banner h3 {
+    font-size: 24px;
+  }
+
   header .banner-text {
     font-family: "alex-regular";
-    font-size: 50px;
+    font-size: 56px;
   }
-  header .banner-text h1 {
-    font: 40px/1.1em "opensans-bold", sans-serif;
-    margin: 0 auto 24px auto;
-  }
-  header .banner-text h3 {
-    font: 14px/1.9em "opensans-regular", sans-serif;
-    width: 90%;
+
+  hr.bookends {
+    max-width: 100%;
   }
 
   /* header social links */

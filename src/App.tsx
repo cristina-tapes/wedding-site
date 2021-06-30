@@ -1,50 +1,66 @@
-import React from "react";
+import * as React from "react";
 import "./App.css";
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import Header from "./components/header";
+import axios from "axios";
+import Home from "./components/home";
 import { About } from "./components/about";
 import { Contact } from "./components/rsvp";
 import { Footer } from "./components/footer";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
-import data from "./data.json";
+import invitationContent from "./data.json";
 
-i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
-  .init({
-    resources: {
-      en: {
-        translation: {
-          welcome: "Welcome to React and react-i18next",
-        },
-      },
-      ro: {
-        translation: {
-          welcome: "Bun venit!",
-        },
-      },
-    },
-    lng: "ro",
-    fallbackLng: "en",
-
-    interpolation: {
-      escapeValue: false,
-    },
-  });
-
-function App() {
-  const [resume, setResume] = React.useState(data);
-  React.useEffect(() => {
-    setResume(data);
-  }, []);
-  return (
-    <div className="App">
-      <Header />
-      <About data={resume.main} />
-      <Contact data={resume.main} />
-      <Footer data={resume.main} />
-    </div>
-  );
+export enum Languages {
+  en = "en",
+  ro = "ro",
+  ru = "ru",
 }
 
-export default App;
+interface IUser {
+  language: Languages;
+  greeting: string;
+}
+
+const AppInternal: React.FunctionComponent<{}> = () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const id = queryParams.get("id");
+  const lang = queryParams.get("lang") as Languages;
+
+  console.log("id: ", id);
+
+  const fetchUser = (id: any) =>
+    axios
+      .get(`<api-url-here>`)
+      .then((res) => res.data);
+
+  const { data, error, isLoading } = useQuery("user", () => fetchUser(id));
+
+  console.log(JSON.stringify(data), error, isLoading);
+  const [language, setLanguage] = React.useState<Languages>(lang || Languages.ro);
+  const [content] = React.useState(invitationContent);
+  const [invitationRsvp, setRsvp] = React.useState<IUser>(data);
+
+  React.useEffect(() => {
+    if (data) {
+      setLanguage(data.language);
+      setRsvp(data);
+    }
+  }, [data]);
+  return (
+    <div className="App">
+      <Home language={language} />
+      <About data={content} />
+      <Contact data={content} />
+      <Footer data={content} />
+    </div>
+  );
+};
+
+const queryClient = new QueryClient();
+
+export const App: React.FunctionComponent<{}> = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AppInternal />
+    </QueryClientProvider>
+  );
+};
