@@ -4,7 +4,7 @@
     "location": "Cluj-Napoca",
     "navHome": "Home",
     "navInvitation": "Invitation",
-    "navAboutUs": "Our Story",
+    "navAboutUs": "About us",
     "navEvents": "Events",
     "navRsvp": "RSVP"
   },
@@ -13,7 +13,7 @@
     "location": "Cluj-Napoca",
     "navHome": "Acasă",
     "navInvitation": "Invitaţie",
-    "navAboutUs": "Povestea noastră",
+    "navAboutUs": "Despre noi",
     "navEvents": "Evenimente",
     "navRsvp": "Confirmare"
   },
@@ -22,7 +22,7 @@
     "location": "Клуж-Напока",
     "navHome": "Главная",
     "navInvitation": "Приглашение",
-    "navAboutUs": "Наша история",
+    "navAboutUs": "О нас",
     "navEvents": "Мероприятия",
     "navRsvp": "Подтверждение"
   }

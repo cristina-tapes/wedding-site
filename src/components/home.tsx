@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Languages } from "../App";
 
-import t from "../localization.json";
+import t from "../localization-home.json";
 
 
 const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) => {
@@ -22,13 +22,13 @@ const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) =>
           <li>
             <a href="#home">{navHome}</a>
           </li>
+          <li>
+            <a href="#about">{navAboutUs}</a>
+          </li>
+
 
           <li>
             <a href="#invitation">{navInvitation}</a>
-          </li>
-
-          <li>
-            <a href="#about">{navAboutUs}</a>
           </li>
 
           <li>

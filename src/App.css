@@ -98,7 +98,8 @@ header {
   background-image: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.6),
-      rgba(111, 155, 128, 0.4)
+      rgba(111, 155, 128, 0.4),
+      rgba(255, 255, 255, 1)
     ),
     url("./images/headerPicture.png");
   background-position: left; /* Center the image */
@@ -303,13 +304,76 @@ ul#nav li.current a:hover {
 }
 
 /* ------------------------------------------------------------------ */
+/* c. Invitation Section
+/* ------------------------------------------------------------------ */
+#invitation {
+  padding-top: 96px;
+  padding-bottom: 66px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgb(111, 155, 128, 0.05),
+    rgb(111, 155, 128, 0.1),
+    rgb(111, 155, 128, 0.1),
+    rgb(111, 155, 128, 0.1),
+    rgb(111, 155, 128, 0.1),
+    rgb(111, 155, 128, 0.1),
+    rgb(111, 155, 128, 0.1),
+    rgb(111, 155, 128, 0.05),
+    rgba(255, 255, 255, 1)
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /* c. About Section
 /* ------------------------------------------------------------------ */
-
+.aboutTransition {
+  margin-bottom: -3px;
+}
 #about {
   padding-top: 96px;
   padding-bottom: 66px;
   overflow: hidden;
+}
+
+#about img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+#about img.lokiImage {
+  margin-top: -20px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+#about div.inlineFlex {
+  display: inline-flex;
+}
+
+#about div.info {
+  margin: 0px 30px;
+}
+
+#about div.info.loki {
+  margin: 0px 30px;
+  padding-left: 22px;
+}
+
+#about div.info.left {
+  text-align: right;
+  display: initial;
+}
+
+#about div.info.right {
+  text-align: left;
+  display: initial;
+}
+
+#about div.mobileInfo {
+  display: none;
 }
 
 /* fadein/fadeout effect for modal popup
@@ -442,13 +506,31 @@ ul#nav li.current a:hover {
 }
 
 /* ------------------------------------------------------------------ */
+/* c. Events Section
+/* ------------------------------------------------------------------ */
+#events {
+  padding-top: 96px;
+  padding-bottom: 66px;
+}
+
+/* ------------------------------------------------------------------ */
 /* h. Contact Section
 /* ------------------------------------------------------------------ */
 
 #rsvp {
-  background: #191919;
   padding-top: 96px;
   padding-bottom: 102px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.5),
+    rgb(111, 155, 128, 0.5),
+    rgb(111, 155, 128, 0.5),
+    rgb(111, 155, 128, 0.4),
+    rgb(111, 155, 128, 0.4),
+    rgb(111, 155, 128, 0.4)
+  );
   color: #636363;
 }
 #rsvp .section-head {
@@ -488,12 +570,15 @@ ul#nav li.current a:hover {
 }
 
 #rsvp h4 {
-  font: 16px/24px "opensans-bold", sans-serif;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
   color: #ebeeee;
   margin-bottom: 6px;
 }
 #rsvp p.lead {
-  font: 18px/36px "opensans-regular", sans-serif;
+  font-size: 18px;
+  font-family: sans-serif;
   padding-right: 3%;
 }
 #rsvp .header-col {
@@ -504,8 +589,13 @@ ul#nav li.current a:hover {
 #rsvp form {
   margin-bottom: 30px;
 }
+#rsvp form fieldset {
+  border-width: 0px;
+}
 #rsvp label {
-  font: 15px/24px "opensans-bold", sans-serif;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: bold;
   margin: 12px 0;
   color: #ebeeee;
   display: inline-block;
@@ -578,31 +668,23 @@ ul#nav li.current a:hover {
   top: 17px;
 }
 
-/* Twitter Feed */
-#twitter {
-  margin-top: 12px;
-  padding: 0;
-}
-#twitter li {
-  margin: 6px 0px 12px 0;
-  line-height: 30px;
-}
-#twitter li span {
-  display: block;
-}
-#twitter li b a {
-  font: 13px/36px "opensans-regular", Sans-serif;
-  color: #474747 !important;
-  border: none;
-}
-
 /* ------------------------------------------------------------------ */
 /* i. Footer
 /* ------------------------------------------------------------------ */
 
+.footerTransition {
+  margin-bottom: -4px;
+  margin-top: -360px;
+  display: initial;
+}
+
+.footerTransitionMobile {
+  display: none;
+}
+
 footer {
   padding-top: 48px;
-  margin-bottom: 48px;
+  background-color: #7da58c;
   color: #303030;
   font-size: 14px;
   text-align: center;
@@ -662,7 +744,7 @@ footer .social-links li:first-child {
 /* Go To Top Button */
 #go-top {
   position: absolute;
-  top: -24px;
+  top: -64px;
   left: 50%;
   margin-left: -30px;
 }
@@ -686,24 +768,7 @@ footer .social-links li:first-child {
   border-radius: 100%;
 }
 #go-top a:hover {
-  background-color: #0f9095;
-}
-
-.social .btn:first-child {
-  margin-right: 30px;
-}
-.social .btn {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.social .btn i {
-  margin-right: 15px;
-}
-.project-btn {
-  background-color: #1abc9c !important;
-}
-.github-btn {
-  background-color: #34495e !important;
+  background-color: darkgreen;
 }
 
 /* ==================================================================
@@ -720,9 +785,29 @@ footer .social-links li:first-child {
   /* header styles
  ------------------------------------------------------------------ */
   header .banner-text h1 {
-    font: 80px/1.1em "opensans-bold", sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;
     letter-spacing: -1px;
     margin: 0 auto 12px auto;
+  }
+
+  #about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  #about img.lokiImage {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 0px;
+  }
+
+  #about div.info.loki {
+    margin: 0px;
+    padding-left: 0px;
   }
 }
 
@@ -749,22 +834,49 @@ footer .social-links li:first-child {
 
   /* nav-wrap */
   #nav-wrap {
-    font: 11px "opensans-bold", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: sans-serif;
     letter-spacing: 1.5px;
   }
 
   /* About Section
  ------------------------------------------------------------------- */
-  #about .profile-pic {
-    width: 114px;
-    height: 114px;
-    margin-left: 12px;
+
+  #about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
   }
-  #about .rsvp-details {
-    width: 50%;
+
+  #about img.lokiImage {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 0px;
   }
-  #about .download {
-    width: 50%;
+
+  #about div.inlineFlex {
+    display: block;
+  }
+
+  #about div.info.loki {
+    margin: 0px;
+    padding-left: 0px;
+  }
+
+  #about div.info.left {
+    text-align: right;
+    display: none;
+  }
+
+  #about div.info.right {
+    text-align: left;
+    display: none;
+  }
+
+  #about div.mobileInfo {
+    display: initial;
   }
 
   /* Contact Section
@@ -777,7 +889,8 @@ footer .social-links li:first-child {
     line-height: 66px;
   }
   #rsvp .section-head p.lead {
-    font: 17px/33px opensans-light, sans-serif;
+    font-size: 17px;
+    font-family: sans-serif;
   }
 }
 
@@ -788,7 +901,9 @@ footer .social-links li:first-child {
   /* mobile navigation
  -------------------------------------------------------------------- */
   #nav-wrap {
-    font: 12px "opensans-bold", sans-serif;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
     background: transparent !important;
     letter-spacing: 1.5px;
     width: auto;
@@ -827,14 +942,9 @@ footer .social-links li:first-child {
   #nav-wrap > a:after {
     top: 60%;
   }
+
   #nav-wrap > h3 {
-    position: absolute;
-    font-family: "alex-regular";
-    margin-left: 10px;
-    margin-top: 8px;
-    font-size: 30px;
-    text-transform: capitalize;
-    color: white;
+    display: none;
   }
 
   /* toggle buttons */
@@ -910,16 +1020,41 @@ footer .social-links li:first-child {
 
   /* About Section
  -------------------------------------------------------------------- */
-  #about .profile-pic {
+
+  #about img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  #about img.lokiImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 0px;
+  }
+
+  #about div.inlineFlex {
+    display: block;
+  }
+
+  #about div.info.loki {
+    margin: 0px;
+    padding-left: 0px;
+  }
+
+  #about div.info.left {
+    text-align: right;
     display: none;
   }
-  #about .download .button {
-    width: 100%;
-    text-align: center;
-    padding: 15px 20px;
+
+  #about div.info.right {
+    text-align: left;
+    display: none;
   }
-  #about .main-col {
-    padding-right: 30px;
+
+  #about div.mobileInfo {
+    display: initial;
   }
 
   /* rsvp Section
@@ -931,7 +1066,9 @@ footer .social-links li:first-child {
     margin-bottom: 12px;
   }
   #rsvp .section-head h1 {
-    font: 16px/24px "opensans-bold", sans-serif;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
@@ -1021,7 +1158,8 @@ footer .social-links li:first-child {
     background-image: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0.6),
-        rgba(111, 155, 128, 0.4)
+        rgba(111, 155, 128, 0.4),
+        rgba(255, 255, 255, 1)
       ),
       url("./images/headerPictureSmall.png");
     height: 660px;
@@ -1037,6 +1175,7 @@ footer .social-links li:first-child {
   }
 
   header .banner-text {
+    padding-top: 100px;
     font-family: "alex-regular";
     font-size: 56px;
   }
@@ -1045,22 +1184,52 @@ footer .social-links li:first-child {
     max-width: 100%;
   }
 
-  /* header social links */
-  header .social {
-    font-size: 20px;
+  #about img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
-  header .social li {
-    margin: 0 6px;
+
+  #about img.lokiImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 0px;
+  }
+
+  #about div.inlineFlex {
+    display: block;
+  }
+
+  #about div.info.loki {
+    margin: 0px;
+    padding-left: 0px;
+  }
+
+  #about div.info.left {
+    text-align: right;
+    display: none;
+  }
+
+  #about div.info.right {
+    text-align: left;
+    display: none;
+  }
+
+  #about div.mobileInfo {
+    display: initial;
   }
 
   /* footer
  ------------------------------------------------------------------------ */
 
-  /* social links */
-  footer .social-links {
-    font-size: 20px;
+  .footerTransition {
+    display: none;
   }
-  footer .social-links li {
-    margin-left: 14px;
+
+  .footerTransitionMobile {
+    display: initial;
+    margin-bottom: -4px;
+    margin-top: -420px;
   }
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
+import { Languages } from "../App";
 
-export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
-  const name = props.data.name;
+export const Rsvp: React.FunctionComponent<{language: Languages}> = ({language}) => {
 
   const [formdata, setFormData] = React.useState({name: undefined, emailId:undefined, message:undefined})
   const onChange = (event: any) => setFormData({ ...formdata, [event.target.name]: event.target.value });
@@ -9,15 +9,7 @@ export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
   return (
     <section id="rsvp">
       <div className="row section-head">
-        <div className="two columns header-col">
-          <h1>
-            <span>Get In Touch.</span>
-          </h1>
-        </div>
-
-        <div className="ten columns">
           <p className="lead">Message</p>
-        </div>
       </div>
 
       <div className="row">
@@ -80,20 +72,6 @@ export const Contact: React.FunctionComponent<{ data?: any }> = (props) => {
             <br />
           </div>
         </div>
-
-        <aside className="four columns footer-widgets">
-          <div className="widget widget_contact">
-            <h4>Address and Phone</h4>
-            <p className="address">
-              {name}
-              <br />
-              Street <br />
-              Address
-              <br />
-              <span>phone</span>
-            </p>
-          </div>
-        </aside>
       </div>
     </section>
   );

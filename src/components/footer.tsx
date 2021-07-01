@@ -1,29 +1,18 @@
 import * as React from "react";
+import { Languages } from "../App";
 
-export const Footer: React.FunctionComponent<{ data?: any }> = (props) => {
-  if (!props.data) return null;
+import t from "../localization-footer.json";
 
-  const networks = props.data.social.map(function (network:any) {
-    return (
-      <li key={network.name}>
-        <a href={network.url}>
-          <i className={network.className} />
-        </a>
-      </li>
-    );
-  });
-
+export const Footer: React.FunctionComponent<{ language:Languages}> = ({language}) => {
+  const {thanks} = t[language];
   return (
     <footer>
       <div className="row">
-        <div className="twelve columns">
-          <ul className="social-links">{networks}</ul>
+          <ul className="social-links">{thanks}</ul>
 
           <ul className="copyright">
-            <li>&copy; Copyright 2021 </li>
-            <li>
-              Design by Cristina{"&"}Alex
-            </li>
+            <li>&copy; Copyright 2021 • Design by Cristina{"&"}Alex</li>
+
           </ul>
         </div>
 
@@ -32,7 +21,7 @@ export const Footer: React.FunctionComponent<{ data?: any }> = (props) => {
             <i className="icon-up-open"></i>
           </a>
         </div>
-      </div>
+
     </footer>
   );
 };
