@@ -7,6 +7,7 @@ export const Invitation: React.FunctionComponent<{
   language: Languages;
   greeting?: string;
 }> = ({ language, greeting }) => {
+  // eslint-disable-next-line
   const { title } = t[language];
 
   return (
@@ -18,7 +19,7 @@ export const Invitation: React.FunctionComponent<{
         <br />
         cand în faţa părinţilor:
         <br />
-        Valeriu şi Anna Tapes şi Csaba şi Gabriela Kerezsi
+        Csaba şi Gabriela Kerezsi şi Valeriu şi Anna Tapes
         <br /> şi a naşilor:
         <br />
         Romeo şi Katalin Erdei şi Maria Temtunic şi Vasile Ciumac
