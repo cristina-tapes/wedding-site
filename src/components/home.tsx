@@ -3,10 +3,20 @@ import { Languages } from "../App";
 
 import t from "../localization-home.json";
 
-
-const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) => {
+const Home: React.FunctionComponent<{
+  language: Languages;
+  showRsvp: boolean;
+}> = ({ language, showRsvp }) => {
   const name = "Cristina &Alex";
-  const { date, location, navHome, navInvitation, navAboutUs, navEvents, navRsvp} = t[language];
+  const {
+    date,
+    location,
+    navHome,
+    navInvitation,
+    navAboutUs,
+    navEvents,
+    navRsvp,
+  } = t[language];
 
   return (
     <header id="home">
@@ -26,7 +36,6 @@ const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) =>
             <a href="#about">{navAboutUs}</a>
           </li>
 
-
           <li>
             <a href="#invitation">{navInvitation}</a>
           </li>
@@ -35,9 +44,11 @@ const Home: React.FunctionComponent<{ language: Languages }> = ({ language }) =>
             <a href="#events">{navEvents}</a>
           </li>
 
-          <li>
-            <a href="#rsvp">{navRsvp}</a>
-          </li>
+          {showRsvp && (
+            <li>
+              <a href="#rsvp">{navRsvp}</a>
+            </li>
+          )}
           {/* <li className="languages">
             <p className="selected">EN</p>
             <br />

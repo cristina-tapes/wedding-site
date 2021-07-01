@@ -20,7 +20,7 @@ export const Rsvp: React.FunctionComponent<{ language: Languages }> = ({
     <section id="rsvp">
       <img className="divider transform" src={divider} alt="" />
       <div className="row section-head">
-      <h1 className="title">{title}</h1>
+        <h1 className="title">{title}</h1>
       </div>
 
       <div className="row">

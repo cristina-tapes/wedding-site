@@ -11,7 +11,7 @@ export const Footer: React.FunctionComponent<{ language:Languages}> = ({language
           <ul className="social-links">{thanks}</ul>
 
           <ul className="copyright">
-            <li>&copy; Copyright 2021 • Design by Cristina{"&"}Alex</li>
+            <li>&copy; Cristina{"&"}Alex 2021</li>
 
           </ul>
         </div>

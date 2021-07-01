@@ -323,6 +323,8 @@ ul#nav li.current a:hover {
 /* c. Invitation Section
 /* ------------------------------------------------------------------ */
 #invitation {
+  color: #2e483f;
+  font-family: serif;
   padding-top: 50px;
   padding-bottom: 66px;
   background-image: linear-gradient(
@@ -373,6 +375,7 @@ ul#nav li.current a:hover {
 
 #about div.info {
   margin: 0px 30px;
+  align-self: center;
 }
 
 #about div.info.loki {
