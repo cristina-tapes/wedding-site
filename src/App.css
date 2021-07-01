@@ -73,6 +73,22 @@ input {
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
 
+img.divider {
+  width: 15%;
+}
+
+img.divider.transform {
+  width: 15%;
+  transform: rotate(0.5turn);
+}
+
+.title {
+  font-size: 30px;
+  font-family: serif;
+  text-transform: uppercase;
+  margin-block-start: 0.3em;
+}
+
 hr.bookends {
   border: 0;
   margin: 1.35em 0 1.35em auto;
@@ -126,7 +142,7 @@ header .banner h3 {
   font-family: serif;
   font-weight: bolder;
   font-size: 36px;
-  color: #2d593f;
+  color: #2e483f;
   text-shadow: 0 0 darkgreen;
 }
 
@@ -307,7 +323,7 @@ ul#nav li.current a:hover {
 /* c. Invitation Section
 /* ------------------------------------------------------------------ */
 #invitation {
-  padding-top: 96px;
+  padding-top: 50px;
   padding-bottom: 66px;
   background-image: linear-gradient(
     to bottom,
@@ -331,12 +347,14 @@ ul#nav li.current a:hover {
   margin-bottom: -3px;
 }
 #about {
-  padding-top: 96px;
+  padding-top: 50px;
   padding-bottom: 66px;
   overflow: hidden;
+  color: #2e483f;
+  font-family: serif;
 }
 
-#about img {
+#about img.foto {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -509,7 +527,7 @@ ul#nav li.current a:hover {
 /* c. Events Section
 /* ------------------------------------------------------------------ */
 #events {
-  padding-top: 96px;
+  padding-top: 50px;
   padding-bottom: 66px;
 }
 
@@ -518,7 +536,7 @@ ul#nav li.current a:hover {
 /* ------------------------------------------------------------------ */
 
 #rsvp {
-  padding-top: 96px;
+  padding-top: 50px;
   padding-bottom: 102px;
   background-image: linear-gradient(
     to bottom,
@@ -532,41 +550,6 @@ ul#nav li.current a:hover {
     rgb(111, 155, 128, 0.4)
   );
   color: #636363;
-}
-#rsvp .section-head {
-  margin-bottom: 42px;
-}
-
-#rsvp a,
-#rsvp a:visited {
-  color: darkgreen;
-}
-#rsvp a:hover,
-#rsvp a:focus {
-  color: #fff;
-}
-
-#rsvp h1 {
-  font-size: 18px;
-  font-family: sans-serif;
-  font-weight: bolder;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #ebeeee;
-  margin-bottom: 6px;
-}
-#rsvp h1 span {
-  display: none;
-}
-#rsvp h1:before {
-  font-family: "FontAwesome";
-  content: "\f0e0";
-  padding-right: 10px;
-  font-size: 72px;
-  line-height: 72px;
-  text-align: left;
-  float: left;
-  color: #ebeeee;
 }
 
 #rsvp h4 {
@@ -792,7 +775,7 @@ footer .social-links li:first-child {
     margin: 0 auto 12px auto;
   }
 
-  #about img {
+  #about img.foto {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -843,7 +826,7 @@ footer .social-links li:first-child {
   /* About Section
  ------------------------------------------------------------------- */
 
-  #about img {
+  #about img.foto {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -881,17 +864,6 @@ footer .social-links li:first-child {
 
   /* Contact Section
  ------------------------------------------------------------------- */
-  #rsvp .section-head {
-    margin-bottom: 30px;
-  }
-  #rsvp .header-col h1:before {
-    font-size: 66px;
-    line-height: 66px;
-  }
-  #rsvp .section-head p.lead {
-    font-size: 17px;
-    font-family: sans-serif;
-  }
 }
 
 /* mobile wide/smaller tablets
@@ -1021,7 +993,7 @@ footer .social-links li:first-child {
   /* About Section
  -------------------------------------------------------------------- */
 
-  #about img {
+  #about img.foto {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -1067,11 +1039,8 @@ footer .social-links li:first-child {
   }
   #rsvp .section-head h1 {
     font-size: 16px;
-    font-family: sans-serif;
-    font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
-    text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
   }
   #rsvp h1 span {
     display: block;
@@ -1184,7 +1153,7 @@ footer .social-links li:first-child {
     max-width: 100%;
   }
 
-  #about img {
+  #about img.foto {
     width: 100px;
     height: 100px;
     border-radius: 50%;

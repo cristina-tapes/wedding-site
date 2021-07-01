@@ -1,15 +1,26 @@
 import * as React from "react";
 import { Languages } from "../App";
+import divider from "../images/divider.png";
+import t from "../localization-rsvp.json";
 
-export const Rsvp: React.FunctionComponent<{language: Languages}> = ({language}) => {
-
-  const [formdata, setFormData] = React.useState({name: undefined, emailId:undefined, message:undefined})
-  const onChange = (event: any) => setFormData({ ...formdata, [event.target.name]: event.target.value });
+export const Rsvp: React.FunctionComponent<{ language: Languages }> = ({
+  language,
+}) => {
+  
+  const { title } = t[language];
+  const [formdata, setFormData] = React.useState({
+    name: undefined,
+    emailId: undefined,
+    message: undefined,
+  });
+  const onChange = (event: any) =>
+    setFormData({ ...formdata, [event.target.name]: event.target.value });
 
   return (
     <section id="rsvp">
+      <img className="divider transform" src={divider} alt="" />
       <div className="row section-head">
-          <p className="lead">Message</p>
+      <h1 className="title">{title}</h1>
       </div>
 
       <div className="row">
@@ -22,7 +33,7 @@ export const Rsvp: React.FunctionComponent<{language: Languages}> = ({language})
                 </label>
                 <input
                   type="text"
-                  value={formdata.name || ''}
+                  value={formdata.name || ""}
                   size={35}
                   id="contactName"
                   name="name"
@@ -36,7 +47,7 @@ export const Rsvp: React.FunctionComponent<{language: Languages}> = ({language})
                 </label>
                 <input
                   type="text"
-                  value={formdata.emailId || ''} 
+                  value={formdata.emailId || ""}
                   size={35}
                   id="email"
                   name="email"
@@ -53,7 +64,7 @@ export const Rsvp: React.FunctionComponent<{language: Languages}> = ({language})
                   rows={15}
                   id="message"
                   name="message"
-                  value={formdata.message || ''}
+                  value={formdata.message || ""}
                   onChange={onChange}
                 ></textarea>
               </div>
