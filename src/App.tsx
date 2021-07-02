@@ -56,6 +56,7 @@ const AppInternal: React.FunctionComponent<{}> = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const id = queryParams.get("id");
   const lang = queryParams.get("lang") as Languages;
+  const floofValue = queryParams.get("floof") ? true : false;
 
   const fetchUser = (id: any) => {
     if (!!id) {
@@ -70,6 +71,7 @@ const AppInternal: React.FunctionComponent<{}> = () => {
     lang || Languages.ro
   );
   const [invitationRsvp, setRsvp] = React.useState<IUser | undefined>(data);
+  const [floof] = React.useState<boolean>(floofValue);
 
   React.useEffect(() => {
     if (data) {
@@ -80,7 +82,7 @@ const AppInternal: React.FunctionComponent<{}> = () => {
   return (
     <div className="App">
       <Home language={language} showRsvp={!!invitationRsvp} />
-      <About language={language} />
+      <About language={language} floof={floof} />
       <Invitation language={language} greeting={invitationRsvp?.greeting} />
       <Events language={language} />
       {invitationRsvp && <Rsvp language={language} />}
