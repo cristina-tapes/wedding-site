@@ -356,6 +356,10 @@ ul#nav li.current a:hover {
   font-family: serif;
 }
 
+#about .aboutCaps {
+  text-transform: uppercase;
+}
+
 #about img.foto {
   width: 200px;
   height: 200px;
@@ -532,6 +536,27 @@ ul#nav li.current a:hover {
 #events {
   padding-top: 50px;
   padding-bottom: 66px;
+  font-family: serif;
+  color: #2e483f;
+}
+
+#events h4,
+h3 {
+  font-style: italic;
+}
+
+#events div.eventsFlex {
+  display: inline-flex;
+}
+
+#events div.eveniment {
+  margin: 0px 60px;
+}
+
+#events iframe.eventMap {
+  border: 0px;
+  width: 450px;
+  height: 450px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -669,18 +694,15 @@ ul#nav li.current a:hover {
 }
 
 footer {
-  padding-top: 48px;
+  padding-top: 10px;
   background-color: #7da58c;
-  color: #303030;
   font-size: 14px;
   text-align: center;
   position: relative;
+  font-family: serif;
+  color: #2e483f;
 }
 
-footer a,
-footer a:visited {
-  color: #525252;
-}
 footer a:hover,
 footer a:focus {
   color: #fff;
@@ -691,11 +713,12 @@ footer .copyright {
   margin: 0;
   padding: 0;
 }
+
 footer .copyright li {
   display: inline-block;
   margin: 0;
   padding: 0;
-  line-height: 24px;
+  font-weight: bolds;
 }
 .ie footer .copyright li {
   display: inline;
@@ -704,6 +727,7 @@ footer .copyright li:before {
   content: "\2022";
   padding-left: 10px;
   padding-right: 10px;
+  font-weight: bolder;
   color: #095153;
 }
 footer .copyright li:first-child:before {
@@ -740,7 +764,6 @@ footer .social-links li:first-child {
   display: block;
   width: 60px;
   height: 60px;
-  background-color: #525252;
 
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -754,7 +777,7 @@ footer .social-links li:first-child {
   border-radius: 100%;
 }
 #go-top a:hover {
-  background-color: darkgreen;
+  color: #2e483f;
 }
 
 /* ==================================================================
@@ -863,6 +886,10 @@ footer .social-links li:first-child {
 
   #about div.mobileInfo {
     display: initial;
+  }
+
+  #events div.eventsFlex {
+    display: inline-block;
   }
 
   /* Contact Section

@@ -17,10 +17,10 @@ export const About: React.FunctionComponent<{
       <img className="divider" src={divider} alt="" />
       <div className="row section-head">
         <h1 className="title">{title}</h1>
-        <h2>
+        {/* <h2>
           Daca am putut trece impreuna printr-o pandemie, vom putea trece si
           peste altele!
-        </h2>
+        </h2> */}
         <h3>
           In August 2016 am inceput sa fim colegi de serviciu, fara sa stim ca
           vom ajunge sa fim un cuplu din Noiembrie.
@@ -31,13 +31,13 @@ export const About: React.FunctionComponent<{
           Pe cand ne bucuram de traiul nostru in Praga si ne pregateam sa va
           invitam la nunta in 2020 <br />
           ne-a lovit pandemia care ne-a convins ca inevitabil trebuie sa
-        </h3>{" "}
-        <h2>ne casatorim!</h2>
+        </h3>
+        <h2 className="aboutCaps">ne casatorim!</h2>
       </div>
       <div className="row">
         <div className="four columns inlineFlex">
           <div className="info left">
-            <h2>♌ Cristina Tapes</h2>
+            <h2>Cristina Tapes</h2>
           </div>
           <div className="info">
             <img className="foto" src={cristinaAvatar} alt="" />
@@ -52,7 +52,7 @@ export const About: React.FunctionComponent<{
             </div>
           </div>
           <div className="info right">
-            <h2>Alex Kerezsi ♒</h2>
+            <h2>Alex Kerezsi</h2>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ export const About: React.FunctionComponent<{
           <div className="three columns inlineFlex">
             <div className="info loki">
               <img className="foto lokiImage" src={lokiAvatar} alt="" />
-              <h2>Loki ♒</h2>
+              <h2>Loki</h2>
             </div>
           </div>
         </div>
