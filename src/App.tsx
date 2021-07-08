@@ -42,7 +42,7 @@ const AppInternal: React.FunctionComponent<{}> = () => {
       <Home language={language} showRsvp={!!invitationRsvp} />
       <About language={language} floof={floof} />
       <Invitation language={language} greeting={invitationRsvp?.greeting} />
-      <Events language={language} />
+      {invitationRsvp && <Events language={language} />}
       {invitationRsvp && <Rsvp language={language} rsvp={invitationRsvp} setRsvp={setRsvp}/>}
       <Footer language={language} />
     </div>
