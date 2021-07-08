@@ -329,16 +329,25 @@ ul#nav li.current a:hover {
   padding-bottom: 66px;
   background-image: linear-gradient(
     to bottom,
+    rgb(111, 155, 128, 1),
     rgba(255, 255, 255, 1),
     rgb(111, 155, 128, 0.05),
     rgb(111, 155, 128, 0.1),
-    rgb(111, 155, 128, 0.1),
-    rgb(111, 155, 128, 0.1),
-    rgb(111, 155, 128, 0.1),
-    rgb(111, 155, 128, 0.1),
+    rgb(111, 155, 128, 0.2),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.2),
     rgb(111, 155, 128, 0.1),
     rgb(111, 155, 128, 0.05),
-    rgba(255, 255, 255, 1)
+    rgba(255, 255, 255, 1),
+    rgb(111, 155, 128, 1)
   );
 }
 
@@ -569,17 +578,16 @@ h3 {
   font-family: serif;
   background-image: linear-gradient(
     to bottom,
+    rgb(111, 155, 128, 1),
     rgba(255, 255, 255, 1),
     rgb(111, 155, 128, 0.3),
-    rgb(111, 155, 128, 0.5),
-    rgb(111, 155, 128, 0.5),
-    rgb(111, 155, 128, 0.5),
     rgb(111, 155, 128, 0.4),
     rgb(111, 155, 128, 0.4),
     rgb(111, 155, 128, 0.4),
     rgb(111, 155, 128, 0.3),
     rgb(111, 155, 128, 0.2),
-    rgba(255, 255, 255, 1)
+    rgba(255, 255, 255, 1),
+    rgb(111, 155, 128, 1)
   );
   color: #2e483f;
 }
@@ -668,7 +676,6 @@ h3 {
   height: auto;
   display: inline-block;
   border-radius: 0px;
-  margin-left: 26%;
 }
 #rsvp button.submit:hover {
   color: #0d0d0d;
@@ -718,7 +725,6 @@ footer {
   color: #2e483f;
   background-image: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 1),
     rgb(111, 155, 128, 0.2),
     rgb(111, 155, 128, 0.3),
@@ -794,13 +800,13 @@ footer .social-links li:first-child {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  color: #2e483f;
+  color: #1f5f49;
   font-size: 21px;
   line-height: 60px;
   border-radius: 100%;
 }
 #go-top a:hover {
-  color: green;
+  color: black;
 }
 
 /* ==================================================================

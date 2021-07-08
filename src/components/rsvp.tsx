@@ -171,6 +171,8 @@ export const Rsvp: React.FunctionComponent<{
                           type="date"
                           id="accommodationStartDate"
                           name="accommodationStartDate"
+                          min="2021-09-02"
+                          max="2021-09-03"
                           onChange={onChange}
                         />
                         <label htmlFor="true">{"Pana la"}</label>
@@ -178,6 +180,8 @@ export const Rsvp: React.FunctionComponent<{
                           type="date"
                           id="accommodationEndDate"
                           name="accommodationEndDate"
+                          min="2021-09-04"
+                          max="2021-09-05"
                           onChange={onChange}
                         />
                       </div>
@@ -196,7 +200,7 @@ export const Rsvp: React.FunctionComponent<{
                   </div>
                 </>
               )}
-              <div>
+              <div className="row">
                 <button className="submit">{rsvp.confirmed? "Modificam" : "Confirmam!"}</button>
                 <span id="image-loader">
                   <img alt="" src="images/loader.gif" />
