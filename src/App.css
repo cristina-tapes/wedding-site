@@ -554,9 +554,9 @@ h3 {
 }
 
 #events iframe.eventMap {
-  border: 0px;
-  width: 450px;
-  height: 450px;
+  border: 0;
+  width: 400px;
+  height: 400px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -566,6 +566,7 @@ h3 {
 #rsvp {
   padding-top: 50px;
   padding-bottom: 102px;
+  font-family: serif;
   background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 1),
@@ -575,21 +576,59 @@ h3 {
     rgb(111, 155, 128, 0.5),
     rgb(111, 155, 128, 0.4),
     rgb(111, 155, 128, 0.4),
-    rgb(111, 155, 128, 0.4)
+    rgb(111, 155, 128, 0.4),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.2),
+    rgba(255, 255, 255, 1)
   );
-  color: #636363;
+  color: #2e483f;
+}
+
+#rsvp div.attendingFlex {
+  display: inline-flex;
+  width: 70%;
+}
+
+#rsvp div.attendingRadio {
+  display: inline-table;
+  margin: 0 30px;
+  width: 50%;
+}
+
+#rsvp div.attendingRadio input {
+  width: 20%;
+}
+#rsvp div.attendingRadio label {
+  width: 80%;
+}
+
+#rsvp div.inlineGuests {
+  display: inline-flex;
+}
+
+#rsvp div.inlineFields {
+  text-align: start;
+  border-style: solid;
+  border-color: white;
+  border-radius: 1px;
+  border-radius: 5px;
+}
+
+#rsvp div.inlineFields.enabled {
+  color: #2e483f;
+}
+
+#rsvp div.inlineFields.disabled {
+  color: dimgray;
 }
 
 #rsvp h4 {
   font-size: 16px;
-  font-family: sans-serif;
   font-weight: bold;
-  color: #ebeeee;
   margin-bottom: 6px;
 }
 #rsvp p.lead {
   font-size: 18px;
-  font-family: sans-serif;
   padding-right: 3%;
 }
 #rsvp .header-col {
@@ -605,38 +644,25 @@ h3 {
 }
 #rsvp label {
   font-size: 15px;
-  font-family: sans-serif;
   font-weight: bold;
   margin: 12px 0;
-  color: #ebeeee;
-  display: inline-block;
-  float: left;
-  width: 26%;
 }
 #rsvp input,
 #rsvp textarea,
 #rsvp select {
-  padding: 10px 20px;
-  color: #eee;
-  background: #373233;
-  margin-bottom: 42px;
-  border: 0;
-  outline: none;
   font-size: 15px;
   line-height: 24px;
-  width: 65%;
+  margin: 10px 0;
 }
 #rsvp input:focus,
 #rsvp textarea:focus,
 #rsvp select:focus {
-  color: #fff;
-  background-color: darkgreen;
+  background-color: #ebf3ee;
 }
 #rsvp button.submit {
   text-transform: uppercase;
+  font-family: serif;
   letter-spacing: 3px;
-  color: #fff;
-  background: #0d0d0d;
   border: none;
   cursor: pointer;
   height: auto;
@@ -683,24 +709,22 @@ h3 {
 /* i. Footer
 /* ------------------------------------------------------------------ */
 
-.footerTransition {
-  margin-bottom: -4px;
-  margin-top: -360px;
-  display: initial;
-}
-
-.footerTransitionMobile {
-  display: none;
-}
-
 footer {
-  padding-top: 10px;
-  background-color: #7da58c;
+  padding-top: 30px;
   font-size: 14px;
   text-align: center;
   position: relative;
   font-family: serif;
   color: #2e483f;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgb(111, 155, 128, 0.2),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3)
+  );
 }
 
 footer a:hover,
@@ -754,7 +778,7 @@ footer .social-links li:first-child {
 /* Go To Top Button */
 #go-top {
   position: absolute;
-  top: -64px;
+  top: -10px;
   left: 50%;
   margin-left: -30px;
 }
@@ -770,14 +794,13 @@ footer .social-links li:first-child {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-
-  color: #fff;
+  color: #2e483f;
   font-size: 21px;
   line-height: 60px;
   border-radius: 100%;
 }
 #go-top a:hover {
-  color: #2e483f;
+  color: green;
 }
 
 /* ==================================================================
@@ -817,6 +840,12 @@ footer .social-links li:first-child {
   #about div.info.loki {
     margin: 0px;
     padding-left: 0px;
+  }
+
+  #events iframe.eventMap {
+    border: 0;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -1059,6 +1088,12 @@ footer .social-links li:first-child {
     display: initial;
   }
 
+  #events iframe.eventMap {
+    border: 0;
+    width: 300px;
+    height: 300px;
+  }
+
   /* rsvp Section
  ----------------------------------------------------------------------- */
   #rsvp {
@@ -1217,6 +1252,12 @@ footer .social-links li:first-child {
 
   #about div.mobileInfo {
     display: initial;
+  }
+
+  #events iframe.eventMap {
+    border: 0;
+    width: 250px;
+    height: 250px;
   }
 
   /* footer

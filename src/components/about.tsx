@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Languages } from "../App";
 import cristinaAvatar from "../images/cristinaAvatar.jpeg";
 import alexAvatar from "../images/alexAvatar.jpeg";
 import lokiAvatar from "../images/lokiAvatar.jpeg";
 import divider from "../images/divider.png";
 import t from "../localization-about.json";
+import { Languages } from "./interfaces";
 
 export const About: React.FunctionComponent<{
   language: Languages;

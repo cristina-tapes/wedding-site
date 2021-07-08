@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Languages } from "../App";
-
 import t from "../localization-home.json";
+import { Languages } from "./interfaces";
 
 const Home: React.FunctionComponent<{
   language: Languages;
@@ -29,23 +28,23 @@ const Home: React.FunctionComponent<{
         </a>
         <h3>{name}</h3>
         <ul id="nav" className="nav">
-          <li>
+          <li key="home">
             <a href="#home">{navHome}</a>
           </li>
-          <li>
+          <li key="about">
             <a href="#about">{navAboutUs}</a>
           </li>
 
-          <li>
+          <li key="invitation">
             <a href="#invitation">{navInvitation}</a>
           </li>
 
-          <li>
+          <li key="events">
             <a href="#events">{navEvents}</a>
           </li>
 
           {showRsvp && (
-            <li>
+            <li key="rsvp">
               <a href="#rsvp">{navRsvp}</a>
             </li>
           )}

@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Languages } from "../App";
-
 import t from "../localization-footer.json";
+import { Languages } from "./interfaces";
 
 export const Footer: React.FunctionComponent<{ language:Languages}> = ({language}) => {
   const {thanks} = t[language];
