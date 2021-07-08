@@ -13,7 +13,7 @@ export const Invitation: React.FunctionComponent<{
   return (
     <section id="invitation">
       <img className="divider transform" src={divider} alt="" />
-      {greeting && <h1 className="title">{greeting}</h1>}
+      <h1 className="title">{greeting ? greeting : "Stiamti invitati"}</h1>
       <h2>
         Ne vom simţi onoraţi să vă avem alături pe <br />4 septembrie 2021
         <br />
