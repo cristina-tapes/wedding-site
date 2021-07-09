@@ -675,8 +675,13 @@ h3 {
 #rsvp input,
 #rsvp textarea,
 #rsvp select,
-#rsvp label {
+#rsvp label,
+#rsvp option {
   margin: 10px 5px;
+  border-color: darkolivegreen;
+  border-radius: 3px;
+  border-width: 1px;
+  font-family: serif;
 }
 
 #rsvp input:focus,

@@ -187,7 +187,7 @@ export const Rsvp: React.FunctionComponent<{
                               id="accommodationStartDate"
                               name="accommodationStartDate"
                               min="2021-09-02"
-                              max="2021-09-03"
+                              max="2021-09-04"
                               onChange={onChange}
                               required
                             />
