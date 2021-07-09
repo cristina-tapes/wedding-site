@@ -11,27 +11,32 @@ export const Rsvp: React.FunctionComponent<{
   const { title } = t[language];
   const onChange = (event: any) => {
     let value = event.target.value;
-    if (
-      event.target.name === "attending" ||
-      event.target.name === "accommodationNeeded"
-    ) {
+    let name = event.target.name;
+    if (name === "attending" || name === "accommodationNeeded") {
       value = event.target.value === "true";
     }
-    setRsvp({ ...rsvp, [event.target.name]: value });
+    if (name === "accommodationStartDate" || name === "accommodationEndDate") {
+      value = new Date(value);
+    }
+    setRsvp({ ...rsvp, [name]: value });
   };
 
   const onGuestChange = (index: number) => (event: any) => {
     let value = event.target.value;
-    if (event.target.name === "isComming") {
+    let name = event.target.name;
+    if (event.target.localName === "label") {
+      name = event.target.htmlFor;
+    }
+    if (name === "isComming") {
       value = !rsvp.guests[index].isComming;
     }
-    if (event.target.name === "vaccinated") {
+    if (name === "vaccinated") {
       value = !rsvp.guests[index].vaccinated;
     }
     const newObject = { ...rsvp };
     newObject.guests[index] = {
       ...rsvp.guests[index],
-      [event.target.name]: value,
+      [name]: value,
     };
     setRsvp(newObject);
   };
@@ -97,7 +102,12 @@ export const Rsvp: React.FunctionComponent<{
                                 checked={guest.isComming}
                                 onChange={onGuestChange(index)}
                               />
-                              <label htmlFor="isComming">{guest.name}</label>
+                              <label
+                                htmlFor="isComming"
+                                onClick={onGuestChange(index)}
+                              >
+                                {guest.name}
+                              </label>
                             </div>
                             <div className="field">
                               <label htmlFor="menuType">Meniu</label>
@@ -120,8 +130,11 @@ export const Rsvp: React.FunctionComponent<{
                               </select>
                             </div>
                             <div className="field">
-                              <label htmlFor="vaccinated">
-                                {"Sunt vaccinat(a)"}
+                              <label
+                                htmlFor="vaccinated"
+                                onClick={onGuestChange(index)}
+                              >
+                                {"Voi fi vaccinat(a)"}
                               </label>
                               <input
                                 type="checkbox"
@@ -139,58 +152,64 @@ export const Rsvp: React.FunctionComponent<{
 
                   <div className="row">
                     <h4>Avem nevoie de cazare:</h4>
-                    <div className="two columns">
-                      <div className="">
+                    <div className="two columns inlineAccommodation">
+                      <div className="accommodationRadio">
                         <input
                           type="radio"
-                          id="true"
+                          id="trueAccommodation"
                           name="accommodationNeeded"
                           onChange={onChange}
                           checked={rsvp.accommodationNeeded ? true : false}
                           value="true"
                         />
-                        <label htmlFor="true">{"Da"}</label>
+                        <label htmlFor="trueAccommodation">{"Da"}</label>
                       </div>
 
-                      <div className="">
+                      <div className="accommodationRadio">
                         <input
                           type="radio"
-                          id="false"
+                          id="falseAccommodation"
                           name="accommodationNeeded"
                           onChange={onChange}
                           checked={rsvp.accommodationNeeded ? false : true}
                           value="false"
                         />
-                        <label htmlFor="false">{"Nu"}</label>
+                        <label htmlFor="falseAccommodation">{"Nu"}</label>
                       </div>
                     </div>
                     {rsvp.accommodationNeeded && (
-                      <div>
-                        <label htmlFor="true">{"De la"}</label>
-                        <input
-                          type="date"
-                          id="accommodationStartDate"
-                          name="accommodationStartDate"
-                          min="2021-09-02"
-                          max="2021-09-03"
-                          onChange={onChange}
-                        />
-                        <label htmlFor="true">{"Pana la"}</label>
-                        <input
-                          type="date"
-                          id="accommodationEndDate"
-                          name="accommodationEndDate"
-                          min="2021-09-04"
-                          max="2021-09-05"
-                          onChange={onChange}
-                        />
+                      <div className="row">
+                        <div className="inlineDates">
+                          <div>
+                            <label htmlFor="true">{"De la"}</label>
+                            <input
+                              type="date"
+                              id="accommodationStartDate"
+                              name="accommodationStartDate"
+                              min="2021-09-02"
+                              max="2021-09-03"
+                              onChange={onChange}
+                              required
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="true">{"Pana la"}</label>
+                            <input
+                              type="date"
+                              id="accommodationEndDate"
+                              name="accommodationEndDate"
+                              min="2021-09-04"
+                              max="2021-09-05"
+                              onChange={onChange}
+                              required
+                            />
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
                   <div className="row">
-                    <label htmlFor="contactMessage">
-                      Message
-                    </label>
+                    <label htmlFor="message">Message</label>
                     <textarea
                       id="message"
                       name="message"
@@ -201,7 +220,9 @@ export const Rsvp: React.FunctionComponent<{
                 </>
               )}
               <div className="row">
-                <button className="submit">{rsvp.confirmed? "Modificam" : "Confirmam!"}</button>
+                <button className="submit">
+                  {rsvp.confirmed ? "Modificam" : "Confirmam!"}
+                </button>
                 <span id="image-loader">
                   <img alt="" src="images/loader.gif" />
                 </span>

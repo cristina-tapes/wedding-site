@@ -611,15 +611,20 @@ h3 {
 }
 
 #rsvp div.inlineGuests {
-  display: inline-flex;
+  display: inline-block;
+}
+
+#rsvp div.guest {
+  border-style: solid;
+  border-color: #6e9b80;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 20px 20px;
 }
 
 #rsvp div.inlineFields {
   text-align: start;
-  border-style: solid;
-  border-color: white;
-  border-radius: 1px;
-  border-radius: 5px;
+  margin: 10px 10px;
 }
 
 #rsvp div.inlineFields.enabled {
@@ -628,6 +633,18 @@ h3 {
 
 #rsvp div.inlineFields.disabled {
   color: dimgray;
+}
+
+#rsvp div.inlineAccommodation {
+  display: inline-flex;
+}
+
+#rsvp div.accommodationRadio {
+  margin: 10px 20px;
+}
+
+#rsvp div.inlineDates {
+  display: inline-flex;
 }
 
 #rsvp h4 {
@@ -657,11 +674,11 @@ h3 {
 }
 #rsvp input,
 #rsvp textarea,
-#rsvp select {
-  font-size: 15px;
-  line-height: 24px;
-  margin: 10px 0;
+#rsvp select,
+#rsvp label {
+  margin: 10px 5px;
 }
+
 #rsvp input:focus,
 #rsvp textarea:focus,
 #rsvp select:focus {
