@@ -18,7 +18,9 @@ const AppInternal: React.FunctionComponent<{}> = () => {
 
   const fetchUser = (id: any) => {
     if (!!id) {
-      return axios.get(`<api-url-here>`).then((res) => res.data);
+      return axios
+        .get(`http://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${id}`)
+        .then((res) => res.data);
     }
     return undefined;
   };
