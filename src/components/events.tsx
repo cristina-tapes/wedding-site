@@ -26,6 +26,7 @@ export const Events: React.FunctionComponent<{ language: Languages }> = ({
               title="locatie cununia civila"
             ></iframe>
           </div>
+          <hr/>
           <div className="eveniment">
             <h2>Petrecerea</h2>
             <h3>Hotel Briliant</h3>

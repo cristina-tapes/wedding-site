@@ -11,14 +11,16 @@ export const Rsvp: React.FunctionComponent<{
   setRsvp: React.Dispatch<React.SetStateAction<IUser | undefined>>;
 }> = ({ language, rsvp, setRsvp }) => {
   const { title } = t[language];
-  const config = {
-    headers: {
-      "content-type": "application/json",
-    },
-  };
 
-  const [plusOne, setPlusOne] = React.useState(rsvp.guests.find(guest => guest.isPlusOne)?.name || "");
-  const { mutate, isSuccess, isError, isLoading } = useMutation(
+  const [showError, setError] = React.useState<{
+    show: Boolean;
+    text?: string;
+  }>({ show: false });
+  const [showSuccess, setSuccess] = React.useState<boolean>(false);
+  const [plusOne, setPlusOne] = React.useState(
+    rsvp.guests.find((guest) => guest.isPlusOne)?.name || ""
+  );
+  const { mutate, isSuccess, isLoading } = useMutation(
     (rsvp: IUser) => {
       return axios.put(
         `https://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${rsvp.id}`,
@@ -27,7 +29,15 @@ export const Rsvp: React.FunctionComponent<{
     }
   );
 
+  React.useEffect(() => {
+    if (isSuccess) {
+      setSuccess(isSuccess);
+      setTimeout(() => setSuccess(false), 3000);
+    }
+  }, [isSuccess, isLoading]);
+
   const onChange = (event: any) => {
+    setError({ show: false, text: undefined });
     let value = event.target.value;
     let name = event.target.name;
     if (name === "attending" || name === "accommodationNeeded") {
@@ -40,6 +50,7 @@ export const Rsvp: React.FunctionComponent<{
   };
 
   const onGuestChange = (index: number) => (event: any) => {
+    setError({ show: false, text: undefined });
     let value = event.target.value;
     let name = event.target.name;
     if (event.target.localName === "label") {
@@ -62,18 +73,32 @@ export const Rsvp: React.FunctionComponent<{
   const onPlusOneChange = (event: any) => {
     let value = event.target.value;
     setPlusOne(value);
-   };
-
+  };
 
   const onSubmit = (event: any) => {
     event.preventDefault();
+    if (rsvp.attending && !rsvp.guests.some((guest) => guest.isComming)) {
+      setError({ show: true, text: "Va rog selectati cel putin un invitat!" });
+      return;
+    }
+    if (
+      rsvp.attending &&
+      rsvp.accommodationNeeded &&
+      rsvp.accommodationStartDate! >= rsvp.accommodationEndDate!
+    ) {
+      setError({
+        show: true,
+        text: "Va rog corectati perioada in care aveti nevoie de cazare!",
+      });
+      return;
+    }
     const newValue = { ...rsvp, confirmed: true };
-    newValue.guests = rsvp.guests.map(guest => {
+    newValue.guests = rsvp.guests.map((guest) => {
       if (guest.isPlusOne) {
         return { ...guest, name: plusOne };
       }
       return guest;
-    })
+    });
     setRsvp(newValue);
     return mutate(newValue);
   };
@@ -122,7 +147,7 @@ export const Rsvp: React.FunctionComponent<{
               {rsvp.attending && (
                 <div className="attending">
                   <div className="row">
-                    <h4>Va rog selectati persoanele care vor veni:</h4>
+                    <h4>Vor participa la eveniment:</h4>
                     <div className="four column inlineGuests">
                       {rsvp.guests.map((guest, index) => (
                         <div className="guest" key={guest.name}>
@@ -213,7 +238,7 @@ export const Rsvp: React.FunctionComponent<{
                   </div>
 
                   <div className="row">
-                    <h4>Avem nevoie de cazare:</h4>
+                    <h4>Cazare:</h4>
                     <div className="two columns inlineAccommodation">
                       <div className="accommodationRadio">
                         <input
@@ -242,7 +267,7 @@ export const Rsvp: React.FunctionComponent<{
                     {rsvp.accommodationNeeded && (
                       <div className="row">
                         <div className="inlineDates">
-                          <div>
+                          <div className="date">
                             <label htmlFor="true">{"De la"}</label>
                             <input
                               type="date"
@@ -262,7 +287,7 @@ export const Rsvp: React.FunctionComponent<{
                               required
                             />
                           </div>
-                          <div>
+                          <div className="date">
                             <label htmlFor="true">{"Pana la"}</label>
                             <input
                               type="date"
@@ -286,33 +311,36 @@ export const Rsvp: React.FunctionComponent<{
                       </div>
                     )}
                   </div>
-                  <div className="row message">
-                    <label htmlFor="message">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={rsvp.message || ""}
-                      onChange={onChange}
-                    />
-                  </div>
+                </div>
+              )}
+              <div className="row message">
+                <label htmlFor="message">Mesaj</label>
+                <textarea
+                  cols={50}
+                  rows={10}
+                  id="message"
+                  name="message"
+                  value={rsvp.message || ""}
+                  onChange={onChange}
+                />
+              </div>
+              {showError.show && (
+                <div className="message-warning">
+                  <h4>✗ {showError.text}</h4>
+                </div>
+              )}
+              {showSuccess && (
+                <div className="message-success">
+                  <h4>✓ Va multumim pentru confirmare!</h4>
                 </div>
               )}
               <div className="row">
                 <button className="submit">
-                  {rsvp.confirmed ? "Modificam" : "Confirmam!"}
+                  {rsvp.confirmed ? "Modifica" : "Confirmam!"}
                 </button>
-                <span id="image-loader">
-                  <img alt="" src="images/loader.gif" />
-                </span>
               </div>
             </fieldset>
           </form>
-
-          <div id="message-warning"> Error boy</div>
-          <div id="message-success">
-            <i className="fa fa-check"></i>Your message was sent, thank you!
-            <br />
-          </div>
         </div>
       </div>
     </section>

@@ -142,7 +142,7 @@ header .banner h3 {
   font-family: serif;
   font-weight: bolder;
   font-size: 36px;
-  color: #2e483f;
+  color: #19342a;
   text-shadow: 0 0 darkgreen;
 }
 
@@ -326,13 +326,22 @@ ul#nav li.current a:hover {
   color: #2e483f;
   font-family: serif;
   padding-top: 50px;
-  padding-bottom: 66px;
+  padding-bottom: 36px;
+  padding-left: 5%;
+  padding-right: 5%;
   background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 1),
     rgb(111, 155, 128, 0.05),
     rgb(111, 155, 128, 0.1),
     rgb(111, 155, 128, 0.2),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
+    rgb(111, 155, 128, 0.3),
     rgb(111, 155, 128, 0.3),
     rgb(111, 155, 128, 0.3),
     rgb(111, 155, 128, 0.3),
@@ -349,6 +358,41 @@ ul#nav li.current a:hover {
   );
 }
 
+#invitation h2,
+h3,
+h4 {
+  margin-block-end: 10px;
+  margin-block-start: 0px;
+}
+
+#invitation div.parents {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0px 10%;
+}
+
+#invitation div.invitationParent {
+  width: 30%;
+}
+
+#invitation div.spiritualParents {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0px 10%;
+}
+
+#invitation div.invitationSpiritualParent {
+  width: 30%;
+}
+
+#invitation p {
+  font-size: small;
+}
+
 /* ------------------------------------------------------------------ */
 /* c. About Section
 /* ------------------------------------------------------------------ */
@@ -357,7 +401,8 @@ ul#nav li.current a:hover {
 }
 #about {
   padding-top: 50px;
-  padding-bottom: 66px;
+  padding-bottom: 36px;
+  margin: 0px 10%;
   overflow: hidden;
   color: #2e483f;
   font-family: serif;
@@ -542,9 +587,13 @@ ul#nav li.current a:hover {
 /* ------------------------------------------------------------------ */
 #events {
   padding-top: 50px;
-  padding-bottom: 66px;
   font-family: serif;
   color: #2e483f;
+}
+
+#events hr {
+  margin-inline: unset;
+  visibility: visible;
 }
 
 #events h4,
@@ -559,13 +608,16 @@ h3 {
 }
 
 #events div.eveniment {
-  margin: 0px 60px;
+  margin: 0px 60px 40px 60px;
 }
 
 #events iframe.eventMap {
-  border: 0;
   width: 400px;
   height: 400px;
+  border-radius: 10px;
+  border-color: #6e9b80;
+  border-style: solid;
+  border-width: 1px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -574,7 +626,6 @@ h3 {
 
 #rsvp {
   padding-top: 50px;
-  padding-bottom: 102px;
   font-family: serif;
   background-image: linear-gradient(
     to bottom,
@@ -594,9 +645,19 @@ h3 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 60px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-style: italic;
+  color: black;
 }
 
 #rsvp div.attendingRadio {
+  display: inline-block;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 5%;
   width: 40%;
 }
 
@@ -611,7 +672,6 @@ h3 {
 #rsvp div.attending {
   border-width: 2px;
   border-color: #6e9b80;
-  border-style: solid;
   margin: 10px 10px;
   border-radius: 30px;
 }
@@ -620,6 +680,7 @@ h3 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 #rsvp div.guest {
@@ -648,6 +709,7 @@ h3 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 #rsvp div.accommodationRadio {
@@ -658,11 +720,18 @@ h3 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: -40px;
+  margin-bottom: 40px;
 }
 
 #rsvp div.message {
-  display: flex;
+  display: grid;
   justify-content: center;
+  margin-bottom: 20px;
+}
+
+#rsvp div.message label {
+  margin-bottom: 2px;
 }
 
 #rsvp h4 {
@@ -710,16 +779,19 @@ h3 {
 #rsvp button.submit {
   text-transform: uppercase;
   font-family: serif;
-  letter-spacing: 3px;
-  border: none;
+  letter-spacing: 2px;
+  border: solid;
+  border-width: 1px;
+  border-color: #6e9b80;
+  background: #b8dfc8;
   cursor: pointer;
-  height: auto;
   display: inline-block;
-  border-radius: 0px;
+  border-radius: 3px;
+  height: 30px;
 }
 #rsvp button.submit:hover {
   color: #0d0d0d;
-  background: #fff;
+  background: #91af9c;
 }
 #rsvp span.required {
   color: darkgreen;
@@ -734,10 +806,10 @@ h3 {
   width: 65%;
   margin-left: 26%;
 }
-#message-warning {
+.message-warning {
   color: #d72828;
 }
-#message-success {
+.message-success {
   color: darkgreen;
 }
 
@@ -758,6 +830,7 @@ h3 {
 
 footer {
   padding-top: 30px;
+  padding-bottom: 20px;
   font-size: 14px;
   text-align: center;
   position: relative;
@@ -788,7 +861,7 @@ footer .copyright li {
   display: inline-block;
   margin: 0;
   padding: 0;
-  font-weight: bolds;
+  font-weight: bold;
 }
 .ie footer .copyright li {
   display: inline;
@@ -856,6 +929,11 @@ footer .social-links li:first-child {
 *   03-18-2014
 
 /* ================================================================== */
+@media only screen and (max-width: 1064px) {
+  #events hr {
+    visibility: hidden;
+  }
+}
 
 /* screenwidth less than 1024px
 --------------------------------------------------------------------- */
@@ -889,12 +967,10 @@ footer .social-links li:first-child {
   }
 
   #events iframe.eventMap {
-    border: 0;
     width: 300px;
     height: 300px;
   }
 }
-
 /* screenwidth less than 900px
 --------------------------------------------------------------------- */
 @media only screen and (max-width: 900px) {
@@ -1131,16 +1207,13 @@ footer .social-links li:first-child {
   }
 
   #events iframe.eventMap {
-    border: 0;
     width: 300px;
     height: 300px;
   }
 
   /* rsvp Section
  ----------------------------------------------------------------------- */
-  #rsvp {
-    padding-bottom: 66px;
-  }
+
   #rsvp .section-head {
     margin-bottom: 12px;
   }
@@ -1180,7 +1253,6 @@ footer .social-links li:first-child {
     width: 100%;
     margin-left: 0;
   }
-
   /* footer
  ------------------------------------------------------------------------ */
 
@@ -1297,9 +1369,12 @@ footer .social-links li:first-child {
   }
 
   #events iframe.eventMap {
-    border: 0;
     width: 250px;
     height: 250px;
+  }
+
+  #rsvp div.attendingRadio {
+    width: auto;
   }
 
   /* footer

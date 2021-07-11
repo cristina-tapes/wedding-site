@@ -25,7 +25,7 @@ const AppInternal: React.FunctionComponent<{}> = () => {
     return undefined;
   };
 
-  const { data, error, isLoading } = useQuery("user", () => fetchUser(id));
+  const { data } = useQuery("user", () => fetchUser(id));
 
   const [language, setLanguage] = React.useState<Languages>(
     lang || Languages.ro
