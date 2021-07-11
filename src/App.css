@@ -702,6 +702,7 @@ footer {
   font-size: 14px;
   text-align: center;
   position: relative;
+  font-style: italic;
   font-family: serif;
   color: #2e483f;
   background-image: linear-gradient(
@@ -730,6 +731,7 @@ footer .copyright li {
   margin: 0;
   padding: 0;
   font-weight: bold;
+  font-style: normal;
 }
 .ie footer .copyright li {
   display: inline;
