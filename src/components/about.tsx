@@ -11,7 +11,7 @@ export const About: React.FunctionComponent<{
   floof: boolean;
 }> = ({ language, floof }) => {
   const { title } = t[language];
-  const lokiText = " si cu Loki";
+  const lokiText = " și cu Loki";
   return (
     <section id="about">
       <img className="divider" src={divider} alt="" />
@@ -22,27 +22,27 @@ export const About: React.FunctionComponent<{
           peste altele!
         </h2> */}
         <h3>
-          In August 2016 am inceput sa fim colegi de serviciu, fara sa stim ca
-          vom ajunge sa fim un cuplu din Noiembrie.
+          În August 2016 am început să fim colegi de serviciu, fără să știm că
+          vom ajunge să fim un cuplu din Noiembrie.
           <br />
-          Ne-a fost foarte bine in doi, dar din primavara lui 2019 ne-a fost si
-          mai bine logoditi{floof && lokiText}.
+          Ne-a fost foarte bine în doi, dar din primăvara lui 2019 ne-a fost și
+          mai bine logodiți{floof && lokiText}.
           <br />
-          Pe cand ne bucuram de traiul nostru in Praga si ne pregateam sa va
-          invitam la nunta in 2020 <br />
-          ne-a lovit pandemia care ne-a convins ca inevitabil trebuie sa
+          Pe când ne bucuram de traiul nostru în Praga și ne pregăteam să vă
+          invităm la nuntă în 2020 <br />
+          ne-a lovit pandemia care ne-a convins că inevitabil trebuie să
         </h3>
-        <h2 className="aboutCaps">ne casatorim!</h2>
+        <h2 className="aboutCaps">ne căsătorim!</h2>
       </div>
       <div className="row">
         <div className="four columns inlineFlex">
           <div className="info left">
-            <h2>Cristina Tapes</h2>
+            <h2>Cristina Țapeș</h2>
           </div>
           <div className="info">
             <img className="foto" src={cristinaAvatar} alt="" />
             <div className="mobileInfo">
-              <h2>Cristina Tapes</h2>
+              <h2>Cristina Țapeș</h2>
             </div>
           </div>
           <div className="info">

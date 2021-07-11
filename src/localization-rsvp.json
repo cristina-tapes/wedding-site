@@ -2,76 +2,76 @@
   "en": {
     "title": "RSVP",
     "attendingYes": "Ne vedem pe 4 Septembrie!",
-    "attendingNo": "Va transmitem sincere felicitari, dar nu vom putea fi alaturi!",
+    "attendingNo": "Vă transmitem sincere felicitări, dar nu vom putea fi alături!",
     "selectGuests": "Vor participa la eveniment:",
     "plusOnePlaceholder": "Nume invitat",
     "menu": "Meniu",
     "menuType": {
       "regular": "Clasic",
       "vegetarian": "Vegetarian",
-      "other": "Alte restrictii alimentare"
+      "other": "Alte restricții alimentare"
     },
-    "vaccinated": "Voi fi vaccinat(a)",
+    "vaccinated": "Vaccinat(ă)",
     "accommodation": "Cazare:",
     "accommodationYes": "Da",
     "accommodationNo": "Nu",
     "from": "De la",
-    "to": "Pana la",
+    "to": "Până la",
     "message": "Mesaj",
-    "messageSuccess": "✓ Va multumim pentru confirmare!",
-    "messageErrorGuests": "✗ Va rog selectati cel putin un invitat!",
-    "messageErrorDates": "✗ Va rog corectati perioada in care aveti nevoie de cazare!",
-    "confirmed": "Confirmam!",
-    "modified": "Modifica"
+    "messageSuccess": "✓ Vă mulțumim pentru confirmare!",
+    "messageErrorGuests": "✗ Vă rog selectați cel puțin un invitat!",
+    "messageErrorDates": "✗ Vă rog corectați perioada în care aveți nevoie de cazare!",
+    "confirmed": "Confirmă",
+    "modified": "Modifică"
   },
   "ro": {
     "title": "Confirmare",
     "attendingYes": "Ne vedem pe 4 Septembrie!",
-    "attendingNo": "Va transmitem sincere felicitari, dar nu vom putea fi alaturi!",
+    "attendingNo": "Vă transmitem sincere felicitări, dar nu vom putea fi alături!",
     "selectGuests": "Vor participa la eveniment:",
     "plusOnePlaceholder": "Nume invitat",
     "menu": "Meniu",
     "menuType": {
       "regular": "Clasic",
       "vegetarian": "Vegetarian",
-      "other": "Alte restrictii alimentare"
+      "other": "Alte restricții alimentare"
     },
-    "vaccinated": "Voi fi vaccinat(a)",
+    "vaccinated": "Vaccinat(ă)",
     "accommodation": "Cazare:",
     "accommodationYes": "Da",
     "accommodationNo": "Nu",
     "from": "De la",
-    "to": "Pana la",
+    "to": "Până la",
     "message": "Mesaj",
-    "messageSuccess": "✓ Va multumim pentru confirmare!",
-    "messageErrorGuests": "✗ Va rog selectati cel putin un invitat!",
-    "messageErrorDates": "✗ Va rog corectati perioada in care aveti nevoie de cazare!",
-    "confirmed": "Confirmam!",
-    "modified": "Modifica"
+    "messageSuccess": "✓ Vă mulțumim pentru confirmare!",
+    "messageErrorGuests": "✗ Vă rog selectați cel puțin un invitat!",
+    "messageErrorDates": "✗ Vă rog corectați perioada în care aveți nevoie de cazare!",
+    "confirmed": "Confirmă",
+    "modified": "Modifică"
   },
   "ru": {
     "title": "Подтверждение",
     "attendingYes": "Ne vedem pe 4 Septembrie!",
-    "attendingNo": "Va transmitem sincere felicitari, dar nu vom putea fi alaturi!",
+    "attendingNo": "Vă transmitem sincere felicitări, dar nu vom putea fi alături!",
     "selectGuests": "Vor participa la eveniment:",
     "plusOnePlaceholder": "Nume invitat",
     "menu": "Meniu",
     "menuType": {
       "regular": "Clasic",
       "vegetarian": "Vegetarian",
-      "other": "Alte restrictii alimentare"
+      "other": "Alte restricții alimentare"
     },
-    "vaccinated": "Voi fi vaccinat(a)",
+    "vaccinated": "Vaccinat(ă)",
     "accommodation": "Cazare:",
     "accommodationYes": "Da",
     "accommodationNo": "Nu",
     "from": "De la",
-    "to": "Pana la",
+    "to": "Până la",
     "message": "Mesaj",
-    "messageSuccess": "✓ Va multumim pentru confirmare!",
-    "messageErrorGuests": "✗ Va rog selectati cel putin un invitat!",
-    "messageErrorDates": "✗ Va rog corectati perioada in care aveti nevoie de cazare!",
-    "confirmed": "Confirmam!",
-    "modified": "Modifica"
+    "messageSuccess": "✓ Vă mulțumim pentru confirmare!",
+    "messageErrorGuests": "✗ Vă rog selectați cel puțin un invitat!",
+    "messageErrorDates": "✗ Vă rog corectați perioada în care aveți nevoie de cazare!",
+    "confirmed": "Confirmă",
+    "modified": "Modifică"
   }
 }

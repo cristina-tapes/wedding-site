@@ -1,4 +1,3 @@
-import { info } from "console";
 import * as React from "react";
 import divider from "../images/divider.png";
 import t from "../localization-invitation.json";
@@ -8,7 +7,21 @@ export const Invitation: React.FunctionComponent<{
   language: Languages;
   greeting?: string;
 }> = ({ language, greeting }) => {
-  const { genericGreeting, seeYou, date, inFrontOfParents, alexParents, connector, cristinaParents, andSpiritualParents, alexSpiritualParents, cristinaSpiritualParents, willSay, yes, confirmMessage } = t[language];
+  const {
+    genericGreeting,
+    seeYou,
+    date,
+    inFrontOfParents,
+    alexParents,
+    connector,
+    cristinaParents,
+    andSpiritualParents,
+    alexSpiritualParents,
+    cristinaSpiritualParents,
+    willSay,
+    yes,
+    confirmMessage,
+  } = t[language];
 
   return (
     <section id="invitation">
@@ -35,8 +48,9 @@ export const Invitation: React.FunctionComponent<{
         </div>
       </div>
       <div>
-        <h3>{andSpiritualParents}</h3></div>
-        <div className="spiritualParents">
+        <h3>{andSpiritualParents}</h3>
+      </div>
+      <div className="spiritualParents">
         <div className="invitationSpiritualParent">
           <h3>{alexSpiritualParents}</h3>
         </div>
@@ -48,7 +62,8 @@ export const Invitation: React.FunctionComponent<{
         </div>
       </div>
       <div>
-        <h3>{willSay}</h3></div>
+        <h3>{willSay}</h3>
+      </div>
       <h1>{yes}</h1>
       <p>{confirmMessage}</p>
     </section>
