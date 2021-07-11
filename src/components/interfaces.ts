@@ -22,6 +22,7 @@ export interface IGuest {
 
 export interface IUser {
   id: string;
+  isPlural?: string;
   language: Languages;
   greeting: string;
   attending?: boolean;

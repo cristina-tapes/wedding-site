@@ -49,7 +49,17 @@ const AppInternal: React.FunctionComponent<{}> = () => {
     <div className="App">
       <Home language={language} showRsvp={!!invitationRsvp} />
       <About language={language} floof={floof} />
-      <Invitation language={language} greeting={invitationRsvp?.greeting} />
+      <Invitation
+        language={language}
+        greeting={invitationRsvp?.greeting}
+        plural={
+          !invitationRsvp?.isPlural &&
+          invitationRsvp &&
+          invitationRsvp?.guests.filter((guest) => guest.isComming).length <= 1
+            ? false
+            : true
+        }
+      />
       {invitationRsvp && <Events language={language} />}
       {invitationRsvp && (
         <Rsvp language={language} rsvp={invitationRsvp} setRsvp={setRsvp} />

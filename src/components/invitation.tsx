@@ -6,10 +6,12 @@ import { Languages } from "./interfaces";
 export const Invitation: React.FunctionComponent<{
   language: Languages;
   greeting?: string;
-}> = ({ language, greeting }) => {
+  plural: boolean;
+}> = ({ language, greeting, plural }) => {
   const {
     genericGreeting,
     seeYou,
+    seeYouPl,
     date,
     inFrontOfParents,
     alexParents,
@@ -28,7 +30,7 @@ export const Invitation: React.FunctionComponent<{
       <img className="divider transform" src={divider} alt="" />
       <h1 className="title">{greeting ? greeting : genericGreeting}</h1>
       <div>
-        <h3>{seeYou}</h3>
+        <h3>{!greeting || plural ? seeYouPl : seeYou}</h3>
       </div>
       <div className="invitationDate">
         <h3>{date}</h3>

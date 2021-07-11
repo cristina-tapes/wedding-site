@@ -2,6 +2,7 @@
   "en": {
     "genericGreeting": "Stimați invitați",
     "seeYou": "Ne vom simţi onoraţi să vă avem alături pe",
+    "seeYouPl": "Ne vom simţi onoraţi să vă avem alături pe",
     "date": "4 septembrie 2021",
     "inFrontOfParents": "când în faţa părinţilor:",
     "alexParents": "Csaba şi Gabriela Kerezsi",
@@ -16,7 +17,8 @@
   },
   "ro": {
     "genericGreeting": "Stimați invitați",
-    "seeYou": "Ne vom simţi onoraţi să vă avem alături pe",
+    "seeYou": "Ne vom simţi onoraţi să te avem alături pe",
+    "seeYouPl": "Ne vom simţi onoraţi să vă avem alături pe",
     "date": "4 septembrie 2021",
     "inFrontOfParents": "când în faţa părinţilor:",
     "alexParents": "Csaba şi Gabriela Kerezsi",
@@ -32,6 +34,7 @@
   "ru": {
     "genericGreeting": "Stimați invitați",
     "seeYou": "Ne vom simţi onoraţi să vă avem alături pe",
+    "seeYouPl": "Ne vom simţi onoraţi să vă avem alături pe",
     "date": "4 septembrie 2021",
     "inFrontOfParents": "când în faţa părinţilor:",
     "alexParents": "Csaba şi Gabriela Kerezsi",

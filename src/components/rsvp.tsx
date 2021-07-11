@@ -20,6 +20,7 @@ export const Rsvp: React.FunctionComponent<{
     menuType,
     vaccinated,
     accommodation,
+    accommodationPl,
     accommodationYes,
     accommodationNo,
     from,
@@ -253,7 +254,12 @@ export const Rsvp: React.FunctionComponent<{
                   </div>
 
                   <div className="row">
-                    <h4>{accommodation}</h4>
+                    <h4>
+                      {!rsvp.isPlural &&
+                      rsvp.guests.filter((guest) => guest.isComming).length <= 1
+                        ? accommodation
+                        : accommodationPl}
+                    </h4>
                     <div className="two columns inlineAccommodation">
                       <div className="accommodationRadio">
                         <input
