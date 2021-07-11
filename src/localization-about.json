@@ -1,11 +1,38 @@
 {
   "en": {
-    "title": "About us"
+    "title": "About us",
+    "nameCristina": "Cristina Țapeș",
+    "nameAlex": "Alex Kerezsi",
+    "nameLoki": "Loki",
+    "invincibleStyle": "ne căsătorim!",
+    "invitation1": "În August 2016 am început să fim colegi de serviciu, fără să știm că vom ajunge să fim un cuplu din Noiembrie.",
+    "invitation2": "Ne-a fost foarte bine în doi, dar din primăvara lui 2019 ne-a fost și mai bine logodiți și cu Loki.",
+    "invitation2WithLoki": "Ne-a fost foarte bine în doi, dar din primăvara lui 2019 ne-a fost și mai bine logodiți și cu Loki.",
+    "invitation3": "Pe când ne bucuram de traiul nostru în Praga și ne pregăteam să vă invităm la nuntă în 2020",
+    "invitation4": "ne-a lovit pandemia care ne-a convins că inevitabil trebuie să"
   },
   "ro": {
-    "title": "Despre noi"
+    "title": "Despre noi",
+    "nameCristina": "Cristina Țapeș",
+    "nameAlex": "Alex Kerezsi",
+    "nameLoki": "Loki",
+    "invincibleStyle": "ne căsătorim!",
+    "invitation1": "În August 2016 am început să fim colegi de serviciu, fără să știm că vom ajunge să fim un cuplu din Noiembrie.",
+    "invitation2": "Ne-a fost foarte bine în doi, dar din primăvara lui 2019 ne-a fost și mai bine logodiți",
+    "invitation2WithLoki": "Ne-a fost foarte bine în doi, dar din primăvară 2019 ne-a fost și mai bine logodiți și în trei, cu Loki.",
+    "invitation3": "Pe când ne bucuram de traiul nostru în Praga și ne pregăteam să vă invităm la nuntă în 2020",
+    "invitation4": "ne-a lovit pandemia care ne-a convins că inevitabil trebuie să"
   },
   "ru": {
-    "title": "О нас"
+    "title": "О нас",
+    "nameCristina": "Cristina Țapeș",
+    "nameAlex": "Alex Kerezsi",
+    "nameLoki": "Loki",
+    "invincibleStyle": "ne căsătorim!",
+    "invitation1": "În August 2016 am început să fim colegi de serviciu, fără să știm că vom ajunge să fim un cuplu din Noiembrie.",
+    "invitation2": "Ne-a fost foarte bine în doi, dar din primăvara lui 2019 ne-a fost și mai bine logodiți și cu Loki.",
+    "invitation2WithLoki": "Ne-a fost foarte bine în doi, dar din primăvara lui 2019 ne-a fost și mai bine logodiți și cu Loki.",
+    "invitation3": "Pe când ne bucuram de traiul nostru în Praga și ne pregăteam să vă invităm la nuntă în 2020",
+    "invitation4": "ne-a lovit pandemia care ne-a convins că inevitabil trebuie să"
   }
 }
