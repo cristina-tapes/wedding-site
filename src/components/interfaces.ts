@@ -13,6 +13,7 @@ export enum MenuType {
 }
 
 export interface IGuest {
+  isPlusOne?: boolean;
   isComming?: boolean;
   name: string;
   vaccinated: boolean;
@@ -20,6 +21,7 @@ export interface IGuest {
 }
 
 export interface IUser {
+  id: string;
   language: Languages;
   greeting: string;
   attending?: boolean;
@@ -30,4 +32,3 @@ export interface IUser {
   accommodationStartDate?: Date;
   accommodationEndDate?: Date;
 }
-

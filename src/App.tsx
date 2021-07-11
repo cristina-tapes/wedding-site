@@ -19,7 +19,7 @@ const AppInternal: React.FunctionComponent<{}> = () => {
   const fetchUser = (id: any) => {
     if (!!id) {
       return axios
-        .get(`http://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${id}`)
+        .get(`https://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${id}`)
         .then((res) => res.data);
     }
     return undefined;
@@ -34,9 +34,15 @@ const AppInternal: React.FunctionComponent<{}> = () => {
   const [floof] = React.useState<boolean>(floofValue);
 
   React.useEffect(() => {
-    if (data) {
+    if ((data as IUser) && (data as IUser).id && (data as IUser).language) {
       setLanguage(data.language);
-      setRsvp(data);
+      setRsvp({
+        ...data,
+        accommodationStartDate:
+          data.accommodationStartDate && new Date(data.accommodationStartDate),
+        accommodationEndDate:
+          data.accommodationEndDate && new Date(data.accommodationEndDate),
+      });
     }
   }, [data]);
   return (
@@ -45,7 +51,9 @@ const AppInternal: React.FunctionComponent<{}> = () => {
       <About language={language} floof={floof} />
       <Invitation language={language} greeting={invitationRsvp?.greeting} />
       {invitationRsvp && <Events language={language} />}
-      {invitationRsvp && <Rsvp language={language} rsvp={invitationRsvp} setRsvp={setRsvp}/>}
+      {invitationRsvp && (
+        <Rsvp language={language} rsvp={invitationRsvp} setRsvp={setRsvp} />
+      )}
       <Footer language={language} />
     </div>
   );

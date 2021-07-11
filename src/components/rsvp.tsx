@@ -1,4 +1,6 @@
 import * as React from "react";
+import axios from "axios";
+import { useMutation } from "react-query";
 import { IUser, Languages, MenuType } from "./interfaces";
 import divider from "../images/divider.png";
 import t from "../localization-rsvp.json";
@@ -9,6 +11,22 @@ export const Rsvp: React.FunctionComponent<{
   setRsvp: React.Dispatch<React.SetStateAction<IUser | undefined>>;
 }> = ({ language, rsvp, setRsvp }) => {
   const { title } = t[language];
+  const config = {
+    headers: {
+      "content-type": "application/json",
+    },
+  };
+
+  const [plusOne, setPlusOne] = React.useState(rsvp.guests.find(guest => guest.isPlusOne)?.name || "");
+  const { mutate, isSuccess, isError, isLoading } = useMutation(
+    (rsvp: IUser) => {
+      return axios.put(
+        `https://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${rsvp.id}`,
+        rsvp
+      );
+    }
+  );
+
   const onChange = (event: any) => {
     let value = event.target.value;
     let name = event.target.name;
@@ -41,7 +59,24 @@ export const Rsvp: React.FunctionComponent<{
     setRsvp(newObject);
   };
 
-  const onSubmit = () => alert("Submited!");
+  const onPlusOneChange = (event: any) => {
+    let value = event.target.value;
+    setPlusOne(value);
+   };
+
+
+  const onSubmit = (event: any) => {
+    event.preventDefault();
+    const newValue = { ...rsvp, confirmed: true };
+    newValue.guests = rsvp.guests.map(guest => {
+      if (guest.isPlusOne) {
+        return { ...guest, name: plusOne };
+      }
+      return guest;
+    })
+    setRsvp(newValue);
+    return mutate(newValue);
+  };
 
   return (
     <section id="rsvp">
@@ -55,8 +90,8 @@ export const Rsvp: React.FunctionComponent<{
           <form onSubmit={onSubmit} id="contactForm" name="contactForm">
             <fieldset>
               <div className="row">
-                <div className="two columns ">
-                  <div className="">
+                <div className="two columns attendingFlex">
+                  <div className="attendingRadio">
                     <input
                       type="radio"
                       id="true"
@@ -65,10 +100,10 @@ export const Rsvp: React.FunctionComponent<{
                       checked={rsvp.attending ? true : false}
                       value="true"
                     />
-                    <label htmlFor="true">Venim!</label>
+                    <label htmlFor="true">Ne vedem pe 4 Septembrie!</label>
                   </div>
 
-                  <div className="">
+                  <div className="attendingRadio">
                     <input
                       type="radio"
                       id="false"
@@ -78,13 +113,14 @@ export const Rsvp: React.FunctionComponent<{
                       value="false"
                     />
                     <label htmlFor="false">
-                      Va transmitem sincere felicitari!
+                      Va transmitem sincere felicitari, dar nu vom putea fi
+                      alaturi!
                     </label>
                   </div>
                 </div>
               </div>
               {rsvp.attending && (
-                <>
+                <div className="attending">
                   <div className="row">
                     <h4>Va rog selectati persoanele care vor veni:</h4>
                     <div className="four column inlineGuests">
@@ -95,20 +131,45 @@ export const Rsvp: React.FunctionComponent<{
                               guest.isComming ? "enabled" : "disabled"
                             }`}
                           >
-                            <div className="field">
-                              <input
-                                type="checkbox"
-                                name="isComming"
-                                checked={guest.isComming}
-                                onChange={onGuestChange(index)}
-                              />
-                              <label
-                                htmlFor="isComming"
-                                onClick={onGuestChange(index)}
-                              >
-                                {guest.name}
-                              </label>
-                            </div>
+                            {!guest.isPlusOne && (
+                              <div className="field">
+                                <input
+                                  type="checkbox"
+                                  name="isComming"
+                                  checked={guest.isComming}
+                                  onChange={onGuestChange(index)}
+                                />
+                                <label
+                                  htmlFor="isComming"
+                                  onClick={onGuestChange(index)}
+                                >
+                                  {guest.name}
+                                </label>
+                              </div>
+                            )}
+                            {guest.isPlusOne && (
+                              <div className="field">
+                                <input
+                                  type="checkbox"
+                                  name="isComming"
+                                  checked={guest.isComming}
+                                  onChange={onGuestChange(index)}
+                                />
+                                <label
+                                  htmlFor="isComming"
+                                  onClick={onGuestChange(index)}
+                                >
+                                  +1
+                                </label>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  value={plusOne}
+                                  onChange={onPlusOneChange}
+                                  placeholder="Nume invitat"
+                                />
+                              </div>
+                            )}
                             <div className="field">
                               <label htmlFor="menuType">Meniu</label>
                               <select
@@ -117,6 +178,7 @@ export const Rsvp: React.FunctionComponent<{
                                 title=""
                                 onChange={onGuestChange(index)}
                                 disabled={guest.isComming ? false : true}
+                                value={guest.menuType}
                               >
                                 <option value={MenuType.regular}>
                                   {"Clasic"}
@@ -189,6 +251,14 @@ export const Rsvp: React.FunctionComponent<{
                               min="2021-09-02"
                               max="2021-09-04"
                               onChange={onChange}
+                              value={`2021-09-${
+                                rsvp.accommodationStartDate
+                                  ?.getDate()
+                                  .toLocaleString("en-US", {
+                                    minimumIntegerDigits: 2,
+                                    useGrouping: false,
+                                  }) || "dd"
+                              }`}
                               required
                             />
                           </div>
@@ -201,6 +271,14 @@ export const Rsvp: React.FunctionComponent<{
                               min="2021-09-04"
                               max="2021-09-05"
                               onChange={onChange}
+                              value={`2021-09-${
+                                rsvp.accommodationEndDate
+                                  ?.getDate()
+                                  .toLocaleString("en-US", {
+                                    minimumIntegerDigits: 2,
+                                    useGrouping: false,
+                                  }) || "dd"
+                              }`}
                               required
                             />
                           </div>
@@ -208,7 +286,7 @@ export const Rsvp: React.FunctionComponent<{
                       </div>
                     )}
                   </div>
-                  <div className="row">
+                  <div className="row message">
                     <label htmlFor="message">Message</label>
                     <textarea
                       id="message"
@@ -217,7 +295,7 @@ export const Rsvp: React.FunctionComponent<{
                       onChange={onChange}
                     />
                   </div>
-                </>
+                </div>
               )}
               <div className="row">
                 <button className="submit">
