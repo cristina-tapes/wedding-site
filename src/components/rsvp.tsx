@@ -10,7 +10,27 @@ export const Rsvp: React.FunctionComponent<{
   rsvp: IUser;
   setRsvp: React.Dispatch<React.SetStateAction<IUser | undefined>>;
 }> = ({ language, rsvp, setRsvp }) => {
-  const { title } = t[language];
+  const {
+    title,
+    attendingYes,
+    attendingNo,
+    selectGuests,
+    plusOnePlaceholder,
+    menu,
+    menuType,
+    vaccinated,
+    accommodation,
+    accommodationYes,
+    accommodationNo,
+    from,
+    to,
+    message,
+    messageSuccess,
+    messageErrorGuests,
+    messageErrorDates,
+    confirmed,
+    modified,
+  } = t[language];
 
   const [showError, setError] = React.useState<{
     show: Boolean;
@@ -20,14 +40,12 @@ export const Rsvp: React.FunctionComponent<{
   const [plusOne, setPlusOne] = React.useState(
     rsvp.guests.find((guest) => guest.isPlusOne)?.name || ""
   );
-  const { mutate, isSuccess, isLoading } = useMutation(
-    (rsvp: IUser) => {
-      return axios.put(
-        `https://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${rsvp.id}`,
-        rsvp
-      );
-    }
-  );
+  const { mutate, isSuccess, isLoading } = useMutation((rsvp: IUser) => {
+    return axios.put(
+      `https://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${rsvp.id}`,
+      rsvp
+    );
+  });
 
   React.useEffect(() => {
     if (isSuccess) {
@@ -78,7 +96,7 @@ export const Rsvp: React.FunctionComponent<{
   const onSubmit = (event: any) => {
     event.preventDefault();
     if (rsvp.attending && !rsvp.guests.some((guest) => guest.isComming)) {
-      setError({ show: true, text: "Va rog selectati cel putin un invitat!" });
+      setError({ show: true, text: messageErrorGuests });
       return;
     }
     if (
@@ -88,7 +106,7 @@ export const Rsvp: React.FunctionComponent<{
     ) {
       setError({
         show: true,
-        text: "Va rog corectati perioada in care aveti nevoie de cazare!",
+        text: messageErrorDates,
       });
       return;
     }
@@ -125,7 +143,7 @@ export const Rsvp: React.FunctionComponent<{
                       checked={rsvp.attending ? true : false}
                       value="true"
                     />
-                    <label htmlFor="true">Ne vedem pe 4 Septembrie!</label>
+                    <label htmlFor="true">{attendingYes}</label>
                   </div>
 
                   <div className="attendingRadio">
@@ -137,17 +155,14 @@ export const Rsvp: React.FunctionComponent<{
                       checked={rsvp.attending ? false : true}
                       value="false"
                     />
-                    <label htmlFor="false">
-                      Va transmitem sincere felicitari, dar nu vom putea fi
-                      alaturi!
-                    </label>
+                    <label htmlFor="false">{attendingNo}</label>
                   </div>
                 </div>
               </div>
               {rsvp.attending && (
                 <div className="attending">
                   <div className="row">
-                    <h4>Vor participa la eveniment:</h4>
+                    <h4>{selectGuests}</h4>
                     <div className="four column inlineGuests">
                       {rsvp.guests.map((guest, index) => (
                         <div className="guest" key={guest.name}>
@@ -191,12 +206,12 @@ export const Rsvp: React.FunctionComponent<{
                                   name="name"
                                   value={plusOne}
                                   onChange={onPlusOneChange}
-                                  placeholder="Nume invitat"
+                                  placeholder={plusOnePlaceholder}
                                 />
                               </div>
                             )}
                             <div className="field">
-                              <label htmlFor="menuType">Meniu</label>
+                              <label htmlFor="menuType">{menu}</label>
                               <select
                                 name="menuType"
                                 id="menuType"
@@ -206,13 +221,13 @@ export const Rsvp: React.FunctionComponent<{
                                 value={guest.menuType}
                               >
                                 <option value={MenuType.regular}>
-                                  {"Clasic"}
+                                  {menuType.regular}
                                 </option>
                                 <option value={MenuType.vegetarian}>
-                                  {"Vegetarian"}
+                                  {menuType.vegetarian}
                                 </option>
                                 <option value={MenuType.other}>
-                                  {"Alte restrictii alimentare"}
+                                  {menuType.other}
                                 </option>
                               </select>
                             </div>
@@ -221,7 +236,7 @@ export const Rsvp: React.FunctionComponent<{
                                 htmlFor="vaccinated"
                                 onClick={onGuestChange(index)}
                               >
-                                {"Voi fi vaccinat(a)"}
+                                {vaccinated}
                               </label>
                               <input
                                 type="checkbox"
@@ -238,7 +253,7 @@ export const Rsvp: React.FunctionComponent<{
                   </div>
 
                   <div className="row">
-                    <h4>Cazare:</h4>
+                    <h4>{accommodation}</h4>
                     <div className="two columns inlineAccommodation">
                       <div className="accommodationRadio">
                         <input
@@ -249,7 +264,9 @@ export const Rsvp: React.FunctionComponent<{
                           checked={rsvp.accommodationNeeded ? true : false}
                           value="true"
                         />
-                        <label htmlFor="trueAccommodation">{"Da"}</label>
+                        <label htmlFor="trueAccommodation">
+                          {accommodationYes}
+                        </label>
                       </div>
 
                       <div className="accommodationRadio">
@@ -261,19 +278,21 @@ export const Rsvp: React.FunctionComponent<{
                           checked={rsvp.accommodationNeeded ? false : true}
                           value="false"
                         />
-                        <label htmlFor="falseAccommodation">{"Nu"}</label>
+                        <label htmlFor="falseAccommodation">
+                          {accommodationNo}
+                        </label>
                       </div>
                     </div>
                     {rsvp.accommodationNeeded && (
                       <div className="row">
                         <div className="inlineDates">
                           <div className="date">
-                            <label htmlFor="true">{"De la"}</label>
+                            <label htmlFor="true">{from}</label>
                             <input
                               type="date"
                               id="accommodationStartDate"
                               name="accommodationStartDate"
-                              min="2021-09-02"
+                              min="2021-09-01"
                               max="2021-09-04"
                               onChange={onChange}
                               value={`2021-09-${
@@ -288,7 +307,7 @@ export const Rsvp: React.FunctionComponent<{
                             />
                           </div>
                           <div className="date">
-                            <label htmlFor="true">{"Pana la"}</label>
+                            <label htmlFor="true">{to}</label>
                             <input
                               type="date"
                               id="accommodationEndDate"
@@ -314,7 +333,7 @@ export const Rsvp: React.FunctionComponent<{
                 </div>
               )}
               <div className="row message">
-                <label htmlFor="message">Mesaj</label>
+                <label htmlFor="message">{message}</label>
                 <textarea
                   cols={50}
                   rows={10}
@@ -326,17 +345,17 @@ export const Rsvp: React.FunctionComponent<{
               </div>
               {showError.show && (
                 <div className="message-warning">
-                  <h4>✗ {showError.text}</h4>
+                  <h4>{showError.text}</h4>
                 </div>
               )}
               {showSuccess && (
                 <div className="message-success">
-                  <h4>✓ Va multumim pentru confirmare!</h4>
+                  <h4>{messageSuccess}</h4>
                 </div>
               )}
               <div className="row">
                 <button className="submit">
-                  {rsvp.confirmed ? "Modifica" : "Confirmam!"}
+                  {rsvp.confirmed ? modified : confirmed}
                 </button>
               </div>
             </fieldset>

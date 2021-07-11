@@ -370,7 +370,7 @@ h4 {
   justify-content: center;
   flex-wrap: wrap;
   width: 80%;
-  margin: 0px 10%;
+  margin: 20px 10%;
 }
 
 #invitation div.invitationParent {
@@ -382,11 +382,15 @@ h4 {
   justify-content: center;
   flex-wrap: wrap;
   width: 80%;
-  margin: 0px 10%;
+  margin: 20px 10%;
 }
 
 #invitation div.invitationSpiritualParent {
   width: 30%;
+}
+
+#invitation div.connector {
+  width: 50px;
 }
 
 #invitation p {
