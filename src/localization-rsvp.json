@@ -2,8 +2,10 @@
   "en": {
     "title": "RSVP",
     "attendingYes": "Ne vedem pe 4 Septembrie!",
-    "attendingNo": "Vă transmitem sincere felicitări, dar nu vom putea fi alături!",
-    "selectGuests": "Vor participa la eveniment:",
+    "attendingNo": "Vă urez sincere felicitări, dar nu voi putea fi alături!",
+    "attendingNoPl": "Vă urăm sincere felicitări, dar nu vom putea fi alături!",
+    "selectGuests": "Va participa la eveniment:",
+    "selectGuestsPl": "Vor participa la eveniment:",
     "plusOnePlaceholder": "Nume invitat",
     "menu": "Meniu",
     "menuType": {
@@ -28,8 +30,10 @@
   "ro": {
     "title": "Confirmare",
     "attendingYes": "Ne vedem pe 4 Septembrie!",
-    "attendingNo": "Vă transmitem sincere felicitări, dar nu vom putea fi alături!",
-    "selectGuests": "Vor participa la eveniment:",
+    "attendingNo": "Vă urez sincere felicitări, dar nu voi putea fi alături!",
+    "attendingNoPl": "Vă urăm sincere felicitări, dar nu vom putea fi alături!",
+    "selectGuests": "Va participa la eveniment:",
+    "selectGuestsPl": "Vor participa la eveniment:",
     "plusOnePlaceholder": "Nume invitat",
     "menu": "Meniu",
     "menuType": {
@@ -54,8 +58,10 @@
   "ru": {
     "title": "Подтверждение",
     "attendingYes": "Ne vedem pe 4 Septembrie!",
-    "attendingNo": "Vă transmitem sincere felicitări, dar nu vom putea fi alături!",
-    "selectGuests": "Vor participa la eveniment:",
+    "attendingNo": "Vă urez sincere felicitări, dar nu voi putea fi alături!",
+    "attendingNoPl": "Vă urăm sincere felicitări, dar nu vom putea fi alături!",
+    "selectGuests": "Va participa la eveniment:",
+    "selectGuestsPl": "Vor participa la eveniment:",
     "plusOnePlaceholder": "Nume invitat",
     "menu": "Meniu",
     "menuType": {

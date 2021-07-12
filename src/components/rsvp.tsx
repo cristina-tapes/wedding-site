@@ -14,7 +14,9 @@ export const Rsvp: React.FunctionComponent<{
     title,
     attendingYes,
     attendingNo,
+    attendingNoPl,
     selectGuests,
+    selectGuestsPl,
     plusOnePlaceholder,
     menu,
     menuType,
@@ -47,6 +49,9 @@ export const Rsvp: React.FunctionComponent<{
       rsvp
     );
   });
+  const isSingular =
+    !rsvp.isPlural &&
+    rsvp.guests.filter((guest) => guest.isComming).length <= 1;
 
   React.useEffect(() => {
     if (isSuccess) {
@@ -156,14 +161,16 @@ export const Rsvp: React.FunctionComponent<{
                       checked={rsvp.attending ? false : true}
                       value="false"
                     />
-                    <label htmlFor="false">{attendingNo}</label>
+                    <label htmlFor="false">
+                      {isSingular ? attendingNo : attendingNoPl}
+                    </label>
                   </div>
                 </div>
               </div>
               {rsvp.attending && (
                 <div className="attending">
                   <div className="row">
-                    <h4>{selectGuests}</h4>
+                    <h4>{isSingular ? selectGuests : selectGuestsPl}</h4>
                     <div className="four column inlineGuests">
                       {rsvp.guests.map((guest, index) => (
                         <div className="guest" key={guest.name}>
@@ -254,12 +261,7 @@ export const Rsvp: React.FunctionComponent<{
                   </div>
 
                   <div className="row">
-                    <h4>
-                      {!rsvp.isPlural &&
-                      rsvp.guests.filter((guest) => guest.isComming).length <= 1
-                        ? accommodation
-                        : accommodationPl}
-                    </h4>
+                    <h4>{isSingular ? accommodation : accommodationPl}</h4>
                     <div className="two columns inlineAccommodation">
                       <div className="accommodationRadio">
                         <input
