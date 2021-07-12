@@ -406,11 +406,15 @@ h4 {
 }
 #about {
   padding-top: 50px;
-  padding-bottom: 36px;
+  padding-bottom: 56px;
   margin: 0px 10%;
   overflow: hidden;
   color: #2e483f;
   font-family: serif;
+}
+
+#about .title {
+  padding-bottom: 50px;
 }
 
 #about .aboutCaps {

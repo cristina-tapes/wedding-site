@@ -15,12 +15,12 @@ export const About: React.FunctionComponent<{
     nameAlex,
     nameCristina,
     nameLoki,
-    invincibleStyle,
-    invitation1,
-    invitation2,
-    invitation2WithLoki,
-    invitation3,
-    invitation4,
+    // invincibleStyle,
+    // invitation1,
+    // invitation2,
+    // invitation2WithLoki,
+    // invitation3,
+    // invitation4,
   } = t[language];
   return (
     <section id="about">
@@ -31,7 +31,7 @@ export const About: React.FunctionComponent<{
           Daca am putut trece impreuna printr-o pandemie, vom putea trece si
           peste altele!
         </h2> */}
-        <h3>
+        {/* <h3>
           {invitation1}
           <br />
           {floof ? invitation2WithLoki : invitation2}
@@ -40,7 +40,7 @@ export const About: React.FunctionComponent<{
           <br />
           {invitation4}
         </h3>
-        <h2 className="aboutCaps">{invincibleStyle}</h2>
+        <h2 className="aboutCaps">{invincibleStyle}</h2> */}
       </div>
       <div className="row">
         <div className="four columns inlineFlex">
