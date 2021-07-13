@@ -1,18 +1,18 @@
 {
   "en": {
     "genericGreeting": "Dear guests",
-    "seeYou": "We invite you to celebrate this special day with us",
-    "seeYouPl": "We invite you to celebrate this special day with us",
-    "date": "on 4th of September 2021",
-    "inFrontOfParents": "Next to our parents:",
+    "seeYou": "We invite you to celebrate our wedding on",
+    "seeYouPl": "We invite you to celebrate our wedding on",
+    "date": "September 4, 2021",
+    "inFrontOfParents": "Together with our parents:",
     "alexParents": "Csaba and Gabriela Kerezsi",
     "connector": "and",
     "cristinaParents": "Valeriu and Anna Țapeș",
-    "andSpiritualParents": "and our Godparents:",
+    "andSpiritualParents": "and our godparents:",
     "alexSpiritualParents": "Romeo Erdei and Katalin Erdei",
     "cristinaSpiritualParents": "Vasile Ciumac and Maria Temțunic",
-    "willSay": "On the moment we say",
-    "yes": "I DO!",
+    "willSay": "",
+    "yes": "",
     "confirmMessage": "Please confirm by 1st of August."
   },
   "ro": {
