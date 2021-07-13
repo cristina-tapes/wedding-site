@@ -11,7 +11,7 @@
     "menuType": {
       "regular": "Clasic",
       "vegetarian": "Vegetarian",
-      "other": "Other food restrictions"
+      "other": "Other dietary restrictions"
     },
     "vaccinated": "Vaccinated",
     "accommodation": "Would you need accommodation:",
