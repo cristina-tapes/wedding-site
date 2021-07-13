@@ -1,11 +1,29 @@
 {
   "en": {
-    "title": "Events"
+    "title": "Events",
+    "officialCeremony": "Cununia civila",
+    "officialCeremonyPlace": "Parcul Central - Foisorul",
+    "officialCeremonyHour": "ora 12:00",
+    "wedding": "Petrecerea",
+    "weddingPlace": "Hotel Briliant",
+    "weddingHour": "ora 15:00"
   },
   "ro": {
-    "title": "Evenimente"
+    "title": "Evenimente",
+    "officialCeremony": "Cununia civilă",
+    "officialCeremonyPlace": "Parcul Central - Foișorul",
+    "officialCeremonyHour": "ora 12:00",
+    "wedding": "Petrecerea",
+    "weddingPlace": "Hotel Briliant",
+    "weddingHour": "ora 15:00"
   },
   "ru": {
-    "title": "Мероприятия"
+    "title": "Мероприятия",
+    "officialCeremony": "Cununia civila",
+    "officialCeremonyPlace": "Parcul Central - Foisorul",
+    "officialCeremonyHour": "ora 12:00",
+    "wedding": "Petrecerea",
+    "weddingPlace": "Hotel Briliant",
+    "weddingHour": "ora 15:00"
   }
 }

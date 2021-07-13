@@ -1,11 +1,86 @@
 {
   "en": {
-    "title": "RSVP"
+    "title": "RSVP",
+    "attendingYes": "Ne vedem pe 4 Septembrie!",
+    "attendingNo": "Vă urez sincere felicitări, dar nu voi putea fi alături!",
+    "attendingNoPl": "Vă urăm sincere felicitări, dar nu vom putea fi alături!",
+    "selectGuests": "Va participa la eveniment:",
+    "selectGuestsPl": "Vor participa la eveniment:",
+    "plusOnePlaceholder": "Nume invitat",
+    "menu": "Meniu",
+    "menuType": {
+      "regular": "Clasic",
+      "vegetarian": "Vegetarian",
+      "other": "Alte restricții alimentare"
+    },
+    "vaccinated": "Vaccinat(ă)",
+    "accommodation": "Dorești cazare:",
+    "accommodationPl": "Doriți cazare:",
+    "accommodationYes": "Da",
+    "accommodationNo": "Nu",
+    "from": "De la",
+    "to": "Până la",
+    "message": "Mesaj",
+    "messageSuccess": "✓ Vă mulțumim pentru confirmare!",
+    "messageErrorGuests": "✗ Vă rog selectați cel puțin un invitat!",
+    "messageErrorDates": "✗ Vă rog corectați perioada în care aveți nevoie de cazare!",
+    "confirmed": "Confirmă",
+    "modified": "Modifică"
   },
   "ro": {
-    "title": "Confirmare"
+    "title": "Confirmare",
+    "attendingYes": "Ne vedem pe 4 Septembrie!",
+    "attendingNo": "Vă urez sincere felicitări, dar nu voi putea fi alături!",
+    "attendingNoPl": "Vă urăm sincere felicitări, dar nu vom putea fi alături!",
+    "selectGuests": "Va participa la eveniment:",
+    "selectGuestsPl": "Vor participa la eveniment:",
+    "plusOnePlaceholder": "Nume invitat",
+    "menu": "Meniu",
+    "menuType": {
+      "regular": "Clasic",
+      "vegetarian": "Vegetarian",
+      "other": "Alte restricții alimentare"
+    },
+    "vaccinated": "Vaccinat(ă)",
+    "accommodation": "Dorești cazare:",
+    "accommodationPl": "Doriți cazare:",
+    "accommodationYes": "Da",
+    "accommodationNo": "Nu",
+    "from": "De la",
+    "to": "Până la",
+    "message": "Mesaj",
+    "messageSuccess": "✓ Vă mulțumim pentru confirmare!",
+    "messageErrorGuests": "✗ Vă rog selectați cel puțin un invitat!",
+    "messageErrorDates": "✗ Vă rog corectați perioada în care aveți nevoie de cazare!",
+    "confirmed": "Confirmă",
+    "modified": "Modifică"
   },
   "ru": {
-    "title": "Подтверждение"
+    "title": "Подтверждение",
+    "attendingYes": "Ne vedem pe 4 Septembrie!",
+    "attendingNo": "Vă urez sincere felicitări, dar nu voi putea fi alături!",
+    "attendingNoPl": "Vă urăm sincere felicitări, dar nu vom putea fi alături!",
+    "selectGuests": "Va participa la eveniment:",
+    "selectGuestsPl": "Vor participa la eveniment:",
+    "plusOnePlaceholder": "Nume invitat",
+    "menu": "Meniu",
+    "menuType": {
+      "regular": "Clasic",
+      "vegetarian": "Vegetarian",
+      "other": "Alte restricții alimentare"
+    },
+    "vaccinated": "Vaccinat(ă)",
+    "accommodation": "Dorești cazare:",
+    "accommodationPl": "Doriți cazare:",
+    "accommodationYes": "Da",
+    "accommodationNo": "Nu",
+    "from": "De la",
+    "to": "Până la",
+    "message": "Mesaj",
+    "messageSuccess": "✓ Vă mulțumim pentru confirmare!",
+    "messageErrorGuests": "✗ Vă rog selectați cel puțin un invitat!",
+    "messageErrorDates": "✗ Vă rog corectați perioada în care aveți nevoie de cazare!",
+    "confirmed": "Confirmă",
+    "modified": "Modifică"
   }
 }

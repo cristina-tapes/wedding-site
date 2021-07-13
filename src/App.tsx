@@ -18,12 +18,14 @@ const AppInternal: React.FunctionComponent<{}> = () => {
 
   const fetchUser = (id: any) => {
     if (!!id) {
-      return axios.get(`<api-url-here>`).then((res) => res.data);
+      return axios
+        .get(`https://wedding-cristina-alex.ew.r.appspot.com/api/rsvp/${id}`)
+        .then((res) => res.data);
     }
     return undefined;
   };
 
-  const { data, error, isLoading } = useQuery("user", () => fetchUser(id));
+  const { data } = useQuery("user", () => fetchUser(id));
 
   const [language, setLanguage] = React.useState<Languages>(
     lang || Languages.ro
@@ -32,18 +34,36 @@ const AppInternal: React.FunctionComponent<{}> = () => {
   const [floof] = React.useState<boolean>(floofValue);
 
   React.useEffect(() => {
-    if (data) {
+    if ((data as IUser) && (data as IUser).id && (data as IUser).language) {
       setLanguage(data.language);
-      setRsvp(data);
+      setRsvp({
+        ...data,
+        accommodationStartDate:
+          data.accommodationStartDate && new Date(data.accommodationStartDate),
+        accommodationEndDate:
+          data.accommodationEndDate && new Date(data.accommodationEndDate),
+      });
     }
   }, [data]);
   return (
     <div className="App">
       <Home language={language} showRsvp={!!invitationRsvp} />
       <About language={language} floof={floof} />
-      <Invitation language={language} greeting={invitationRsvp?.greeting} />
+      <Invitation
+        language={language}
+        greeting={invitationRsvp?.greeting}
+        plural={
+          !invitationRsvp?.isPlural &&
+          invitationRsvp &&
+          invitationRsvp?.guests.filter((guest) => guest.isComming).length <= 1
+            ? false
+            : true
+        }
+      />
       {invitationRsvp && <Events language={language} />}
-      {invitationRsvp && <Rsvp language={language} rsvp={invitationRsvp} setRsvp={setRsvp}/>}
+      {invitationRsvp && (
+        <Rsvp language={language} rsvp={invitationRsvp} setRsvp={setRsvp} />
+      )}
       <Footer language={language} />
     </div>
   );

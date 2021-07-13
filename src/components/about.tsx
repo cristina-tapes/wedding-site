@@ -10,8 +10,18 @@ export const About: React.FunctionComponent<{
   language: Languages;
   floof: boolean;
 }> = ({ language, floof }) => {
-  const { title } = t[language];
-  const lokiText = " si cu Loki";
+  const {
+    title,
+    nameAlex,
+    nameCristina,
+    nameLoki,
+    // invincibleStyle,
+    // invitation1,
+    // invitation2,
+    // invitation2WithLoki,
+    // invitation3,
+    // invitation4,
+  } = t[language];
   return (
     <section id="about">
       <img className="divider" src={divider} alt="" />
@@ -21,38 +31,36 @@ export const About: React.FunctionComponent<{
           Daca am putut trece impreuna printr-o pandemie, vom putea trece si
           peste altele!
         </h2> */}
-        <h3>
-          In August 2016 am inceput sa fim colegi de serviciu, fara sa stim ca
-          vom ajunge sa fim un cuplu din Noiembrie.
+        {/* <h3>
+          {invitation1}
           <br />
-          Ne-a fost foarte bine in doi, dar din primavara lui 2019 ne-a fost si
-          mai bine logoditi{floof && lokiText}.
+          {floof ? invitation2WithLoki : invitation2}
           <br />
-          Pe cand ne bucuram de traiul nostru in Praga si ne pregateam sa va
-          invitam la nunta in 2020 <br />
-          ne-a lovit pandemia care ne-a convins ca inevitabil trebuie sa
+          {invitation3}
+          <br />
+          {invitation4}
         </h3>
-        <h2 className="aboutCaps">ne casatorim!</h2>
+        <h2 className="aboutCaps">{invincibleStyle}</h2> */}
       </div>
       <div className="row">
         <div className="four columns inlineFlex">
           <div className="info left">
-            <h2>Cristina Tapes</h2>
+            <h2>{nameCristina}</h2>
           </div>
           <div className="info">
             <img className="foto" src={cristinaAvatar} alt="" />
             <div className="mobileInfo">
-              <h2>Cristina Tapes</h2>
+              <h2>{nameCristina}</h2>
             </div>
           </div>
           <div className="info">
             <img className="foto" src={alexAvatar} alt="" />
             <div className="mobileInfo">
-              <h2>Alex Kerezsi</h2>
+              <h2>{nameAlex}</h2>
             </div>
           </div>
           <div className="info right">
-            <h2>Alex Kerezsi</h2>
+            <h2>{nameAlex}</h2>
           </div>
         </div>
       </div>
@@ -61,7 +69,7 @@ export const About: React.FunctionComponent<{
           <div className="three columns inlineFlex">
             <div className="info loki">
               <img className="foto lokiImage" src={lokiAvatar} alt="" />
-              <h2>Loki</h2>
+              <h2>{nameLoki}</h2>
             </div>
           </div>
         </div>
