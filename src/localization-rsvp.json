@@ -4,8 +4,8 @@
     "attendingYes": "See you on 4th of September!",
     "attendingNo": "I send my sincere congrats, but I will not be able to join!",
     "attendingNoPl": "We send our sincere congrats, but we will not be able to join!",
-    "selectGuests": "Will participate to the event:",
-    "selectGuestsPl": "Will participate to the event:",
+    "selectGuests": "Attendees:",
+    "selectGuestsPl": "Attendees:",
     "plusOnePlaceholder": "Name of attendee",
     "menu": "Menu",
     "menuType": {
@@ -14,8 +14,8 @@
       "other": "Other food restrictions"
     },
     "vaccinated": "Vaccinated",
-    "accommodation": "Do you need accommodation:",
-    "accommodationPl": "Do you need accommodation:",
+    "accommodation": "Would you need accommodation:",
+    "accommodationPl": "Would you need accommodation:",
     "accommodationYes": "Yes",
     "accommodationNo": "No",
     "from": "Starting from",
