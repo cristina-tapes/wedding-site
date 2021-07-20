@@ -32,19 +32,19 @@
     "confirmMessage": "Vă rugăm să confirmați până în 1 august."
   },
   "ru": {
-    "genericGreeting": "Stimați invitați",
-    "seeYou": "Ne vom simţi onoraţi să vă avem alături pe",
-    "seeYouPl": "Ne vom simţi onoraţi să vă avem alături pe",
-    "date": "4 septembrie 2021",
-    "inFrontOfParents": "când în faţa părinţilor:",
-    "alexParents": "Csaba şi Gabriela Kerezsi",
-    "connector": "şi",
-    "cristinaParents": "Valeriu şi Anna Țapeș",
-    "andSpiritualParents": "şi a naşilor:",
-    "alexSpiritualParents": "Romeo Erdei şi Katalin Erdei",
-    "cristinaSpiritualParents": "Vasile Ciumac şi Maria Temțunic",
-    "willSay": "vom spune",
-    "yes": "DA!",
-    "confirmMessage": "Vă rugăm să confirmați până în 1 august."
+    "genericGreeting": "Дорогие гости",
+    "seeYou": "Мы будем очень рады видеть тебя",
+    "seeYouPl": "Мы будем очень рады видеть вас",
+    "date": "4го сентября 2021",
+    "inFrontOfParents": "когда перед нашими родителями:",
+    "alexParents": "Чобо и Габриела Кережи",
+    "connector": "и",
+    "cristinaParents": "Валерию и Анна Цапеш",
+    "andSpiritualParents": "и духовными родителями:",
+    "alexSpiritualParents": "Ромео Эрдей и Котолин Эрдей",
+    "cristinaSpiritualParents": "Васьле Чумак и Мария Темцуник",
+    "willSay": "мы скажем",
+    "yes": "ДА!",
+    "confirmMessage": "Пожалуйста подтвердите приглашение до 1го августа."
   }
 }
