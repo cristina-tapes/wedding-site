@@ -60,7 +60,7 @@ const AppInternal: React.FunctionComponent<{}> = () => {
             : true
         }
       />
-      {invitationRsvp && <Events language={language} />}
+      <Events language={language} />
       {invitationRsvp && (
         <Rsvp language={language} rsvp={invitationRsvp} setRsvp={setRsvp} />
       )}

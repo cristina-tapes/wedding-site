@@ -39,11 +39,9 @@ const Home: React.FunctionComponent<{
             <a href="#invitation">{navInvitation}</a>
           </li>
 
-          {showRsvp && (
-            <li key="events">
-              <a href="#events">{navEvents}</a>
-            </li>
-          )}
+          <li key="events">
+            <a href="#events">{navEvents}</a>
+          </li>
 
           {showRsvp && (
             <li key="rsvp">
