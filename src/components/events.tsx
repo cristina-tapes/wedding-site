@@ -11,6 +11,9 @@ export const Events: React.FunctionComponent<{ language: Languages }> = ({
     officialCeremony,
     officialCeremonyPlace,
     officialCeremonyHour,
+    religiousCeremony,
+    religiousCeremonyPlace,
+    religiousCeremonyHour,
     wedding,
     weddingHour,
     weddingPlace,
@@ -35,6 +38,18 @@ export const Events: React.FunctionComponent<{ language: Languages }> = ({
             ></iframe>
           </div>
           <hr />
+          <div className="eveniment">
+            <h2>{religiousCeremony}</h2>
+            <h3>{religiousCeremonyPlace}</h3>
+            <h4>{religiousCeremonyHour}</h4>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1222.428340138126!2d23.56245547036136!3d46.76448422602726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490e89e2839017%3A0xe27f3576151189d2!2sBiserica%20%C3%8En%C4%83l%C8%9Barea%20Sfintei%20Cruci!5e0!3m2!1sen!2sro!4v1626871879223!5m2!1sen!2sro"
+              loading="lazy"
+              className="eventMap"
+              title="locatie cununia religioasa"
+            ></iframe>
+          </div>
+          <hr className="secondHR"/>
           <div className="eveniment">
             <h2>{wedding}</h2>
             <h3>{weddingPlace}</h3>

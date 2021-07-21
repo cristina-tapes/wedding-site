@@ -476,6 +476,10 @@ h4 {
   visibility: visible;
 }
 
+#events hr.secondHR {
+  visibility: hidden;
+}
+
 #events h4,
 h3 {
   font-style: italic;
@@ -803,7 +807,13 @@ footer .social-links li:first-child {
 *   03-18-2014
 
 /* ================================================================== */
-@media only screen and (max-width: 1064px) {
+@media only screen and (min-width: 1570px) {
+  #events hr.secondHR {
+    visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 1045px) {
   #events hr {
     visibility: hidden;
   }
