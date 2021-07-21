@@ -87,7 +87,7 @@ export const Invitation: React.FunctionComponent<{
             <h3>{willSay}</h3>
           </div>
           <div>
-            <h3>{yes}</h3>
+            <h3>{plural? "вместе с вами." : "вместе с тобой."}</h3>
           </div>
         </>
       )}
