@@ -13,7 +13,7 @@
     "cristinaSpiritualParents": "Vasile Ciumac and Maria Temțunic",
     "willSay": "",
     "yes": "",
-    "confirmMessage": "Please confirm by 1st of August."
+    "confirmMessage": "Please confirm by August 19."
   },
   "ro": {
     "genericGreeting": "Stimați invitați",
@@ -29,7 +29,7 @@
     "cristinaSpiritualParents": "Vasile Ciumac şi Maria Temțunic",
     "willSay": "vom spune",
     "yes": "DA!",
-    "confirmMessage": "Vă rugăm să confirmați până în 1 august."
+    "confirmMessage": "Vă rugăm să confirmați până în 19 august."
   },
   "ru": {
     "genericGreeting": "Дорогие гости",
@@ -45,6 +45,6 @@
     "cristinaSpiritualParents": "",
     "willSay": "Мы будем очень рады провести этот особенный день",
     "yes": "",
-    "confirmMessage": "Пожалуйста подтвердите приглашение до 1 августа."
+    "confirmMessage": "Пожалуйста подтвердите приглашение до 19 августа."
   }
 }
