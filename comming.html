@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <style>
+      table,
+      td,
+      thead {
+        border-width: 1px;
+        border-style: solid;
+        border-color: black;
+        color: darkolivegreen;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      thead {
+        height: 70px;
+        color: dark;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: inline; padding-left: 10%">
+      <label
+        style="color: darkslategrey; padding-right: 30px"
+        id="total"
+      ></label>
+      <label
+        style="color: darkblue; padding-right: 30px"
+        id="total-adults"
+      ></label>
+      <label
+        style="color: darkcyan; padding-right: 30px"
+        id="total-children"
+      ></label>
+      <label
+        style="color: darkolivegreen; padding-right: 30px"
+        id="total-services"
+      ></label>
+      <label
+        style="color: green; padding-right: 30px"
+        id="total-regular"
+      ></label>
+      <label
+        style="color: blue; padding-right: 30px"
+        id="total-vegetarian"
+      ></label>
+      <label
+        style="color: lightcoral; padding-right: 30px"
+        id="total-other"
+      ></label>
+
+      <label style="color: black" id="accomodation-needed"></label>
+    </div>
+    <br />
+    <br />
+    <br />
+    <table id="invitee" style="margin-left: 10%">
+      <thead>
+        <td style="width: 20px">Index</td>
+        <td>Name</td>
+        <td>Invitation link</td>
+        <td>Menu</td>
+        <td>Vaccinated</td>
+        <td style="width: 400px">Message</td>
+        <td>Accommondation</td>
+        <td>Start</td>
+        <td>End</td>
+        <td style="width: 20px">Room guests</td>
+      </thead>
+      <tbody id="t-body"></tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  fetch("").then((s) => s.json().then((k) => doStuff(k)));
+
+  function doStuff(response) {
+    let invitesJson = response;
+
+    var invites = invitesJson;
+
+    var tbody = document.getElementById("t-body");
+
+    var finalHtml = "";
+
+    var totalConfirmedAttending = 0;
+    var totalUnanswered = 0;
+    var totalConfirmedNotAttending = 0;
+
+    var accomodationNeeded = 0;
+    invites
+      .filter(
+        (invitee) =>
+          invitee.confirmed && invitee.attending && !invitee.guests[0].isService
+      )
+      .forEach((invitee, inviteeIndex) => {
+        var guests = invitee.guests;
+
+        accomodationNeeded +=
+          invitee.accommodationNeeded && invitee.attending && invitee.confirmed
+            ? 1
+            : 0;
+        var message = invitee.message ?? "";
+
+        var messageCount = 0;
+        guests
+          .filter((guest) => guest.isComming && !guest.isService)
+          .forEach((guest, index) => {
+            if (guest.name) {
+              finalHtml +=
+                `<tr ${
+                  inviteeIndex % 2 == 0
+                    ? "style='background-color: lightgray;'"
+                    : ""
+                }>` +
+                "<td>" +
+                inviteeIndex +
+                "</td>" +
+                "<td>" +
+                guest.name +
+                "</td>" +
+                '<td> <a target="_blank" href="' +
+                "http://alexcristina-wedding.info?id=" +
+                invitee.id +
+                '"> link </a>' +
+                "<td>" +
+                guest.menuType +
+                "</td>" +
+                "<td>" +
+                guest.vaccinated +
+                "</td>" +
+                "</td>" +
+                "<td>" +
+                (guest.menuDetails ? guest.menuDetails : "") +
+                "</td>" +
+                "<td>" +
+                (index == 0 && invitee.accommodationNeeded ? "yes" : "") +
+                "</td>" +
+                "<td>" +
+                (index == 0 &&
+                invitee.accommodationNeeded &&
+                invitee.accommodationStartDate
+                  ? new Date(invitee.accommodationStartDate).toDateString()
+                  : "") +
+                "</td>" +
+                "<td>" +
+                (index == 0 &&
+                invitee.accommodationNeeded &&
+                invitee.accommodationEndDate
+                  ? new Date(invitee.accommodationEndDate).toDateString()
+                  : "") +
+                "</td>" +
+                "<td>" +
+                (index == 0 &&
+                invitee.accommodationNeeded &&
+                invitee.accNumberOfNights
+                  ? invitee.accNumberOfNights
+                  : "") +
+                "</td>" +
+                "</tr>";
+            }
+          });
+      });
+
+    invites
+      .filter(
+        (invitee) =>
+          invitee.confirmed && invitee.attending && invitee.guests[0].isService
+      )
+      .forEach((invitee, inviteeIndex) => {
+        var guests = invitee.guests;
+        var message = invitee.message ?? "";
+
+        var messageCount = 0;
+        guests
+          .filter((guest) => guest.isComming)
+          .forEach((guest, index) => {
+            if (guest.name) {
+              finalHtml +=
+                `<tr style='background-color: lightyellow;'>` +
+                "<td>" +
+                inviteeIndex +
+                "</td>" +
+                "<td>" +
+                guest.name +
+                "</td>" +
+                '<td> <a target="_blank" href="' +
+                "http://alexcristina-wedding.info?id=" +
+                invitee.id +
+                '"> link </a>' +
+                "<td>" +
+                guest.menuType +
+                "</td>" +
+                "<td>" +
+                guest.vaccinated +
+                "</td>" +
+                "</td>" +
+                "<td>" +
+                "</td>" +
+                "<td>" +
+                "</td>" +
+                "<td>" +
+                "</td>" +
+                "<td>" +
+                "</td>" +
+                "<td>" +
+                "</td>" +
+                "</tr>";
+            }
+          });
+      });
+
+    tbody.innerHTML = finalHtml;
+
+    const guestReduced = invites
+      .filter((invitee) => invitee.confirmed && invitee.attending)
+      .reduce((acc, curr) => acc.concat(curr.guests), [])
+      .filter((guest) => guest.isComming);
+
+    document.getElementById("total").innerHTML =
+      "Nr of Guests => " + guestReduced.length;
+    document.getElementById("total-adults").innerHTML =
+      "Nr of Adult guests=> " +
+      guestReduced.filter((guest) => !guest.isChild && !guest.isService).length;
+    document.getElementById("total-children").innerHTML =
+      "Nr of children => " +
+      guestReduced.filter((guest) => guest.isChild).length;
+    document.getElementById("total-services").innerHTML =
+      "Nr of Service people => " +
+      guestReduced.filter((guest) => guest.isService).length;
+    document.getElementById("total-regular").innerHTML =
+      "Menu Classic => " +
+      guestReduced.filter(
+        (guest) => guest.menuType === "regular" && !guest.isChild
+      ).length;
+    document.getElementById("total-vegetarian").innerHTML =
+      "Menu Veggi => " +
+      guestReduced.filter(
+        (guest) => guest.menuType === "vegetarian" && !guest.isChild
+      ).length;
+    document.getElementById("total-other").innerHTML =
+      "Menu other => " +
+      guestReduced.filter(
+        (guest) => guest.menuType === "other" && !guest.isChild
+      ).length;
+    document.getElementById("accomodation-needed").innerHTML =
+      "Total accomodation needed " + accomodationNeeded;
+  }
+</script>
