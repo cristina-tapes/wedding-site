@@ -1,3 +1,11 @@
+# Add to your api
+```
+const cors = require('cors');
+const router = express.Router();
+router.use(bodyParser.json());
+router.use(cors());
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
